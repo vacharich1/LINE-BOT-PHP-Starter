@@ -1,5 +1,5 @@
 ﻿<?php
-$access_token = '1l6c8hOlVNiLh23YRFrdl1TxJxK4KUZppI9dRaDscY5fX50D6xEBhb4D0ZglujEA1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH7ISxjUDK55FzS1B3DhC6X4/m4ZM0/0bN7HRNzLzKToewdB04t89/1O/w1cDnyilFU=';
+$access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -18,17 +18,15 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = [
-				{
-					'type' => 'text',
-					'text' => $text
-				}
+				'type' => 'text',
+				'text' => $text
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages]
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -46,4 +44,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK11";
+echo "OK";
