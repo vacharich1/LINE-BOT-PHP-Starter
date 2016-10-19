@@ -23,11 +23,11 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = array(
+			$messages = array[
             			('type' => 'text','text' => $text),('type' => 'text','text' => "hello")
             			
             		)
-        		);
+        		];
 
 			
 
