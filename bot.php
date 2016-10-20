@@ -4,7 +4,7 @@ $access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00n
 // Get POST body content
 $content = file_get_contents('php://input');
 
-$myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+$myfile = fopen("hoon.txt", "w") or die("Unable to open file!");
 $txt = "John Doe\n";
 fwrite($myfile, $txt);
 $txt = "Jane Doe\n";
