@@ -24,12 +24,13 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = [
-			{
+			$messages = Array[
+			
+			[
 				     'type' => 'text',
 				     'text' => "Hello, user"
-			}
-            
+			]
+
 			];
 
 
@@ -83,7 +84,9 @@ foreach ($constants["json"] as $name => $value) {
 // Show the errors for different depths.
 foreach (range(4, 3, -1) as $depth) {
     var_dump(json_decode($json, true, $depth));
-    echo 'Last error: ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
+   
 }
+
+echo
 
 echo "OK11";
