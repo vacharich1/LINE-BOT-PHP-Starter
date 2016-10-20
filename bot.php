@@ -21,9 +21,10 @@ if (!is_null($events['events'])) {
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			echo $replyToken
 			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '3692fbc3db90c226b12e3f91130e2f9f']);
+			echo "OK00";
 			$response = $bot->replyText($replyToken, 'hello!');
 
 
