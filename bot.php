@@ -40,18 +40,13 @@ if (!is_null($events['events'])) {
 				      'previewImageUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
 			];
 
-			$messages3 = ['type' => 'imagemap',
-				     'baseUrl' => 'http://www.investorz.com/chart/AOT.BK'
-					
-			];
-
 			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1,$messages2,$messages3]
+				'messages' => [$messages,$messages1,$messages2]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
