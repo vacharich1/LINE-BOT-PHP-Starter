@@ -24,9 +24,20 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = ['type' => 'text',
-				     'text' => $text
-			];
+			$messages = json_encode(
+    array(
+        1 => array(
+            'English' => array(
+                'One',
+                'January'
+            ),
+            'French' => array(
+                'Une',
+                'Janvier'
+            )
+        )
+    )
+);
 
 			
 			// Make a POST Request to Messaging API to reply to sender
@@ -80,4 +91,6 @@ foreach (range(4, 3, -1) as $depth) {
     var_dump(json_decode($json, true, $depth));
     echo 'Last error: ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
 }
+
+echo
 echo "OK11";
