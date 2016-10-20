@@ -24,8 +24,16 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+<<<<<<< HEAD
 			$messages = ['type' => 'text',
 				     'text' => $text
+=======
+			$messages = [
+				
+					'type' => 'text',
+					'text' => 'hello'
+				
+>>>>>>> origin/master
 			];
 
 			
