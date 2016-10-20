@@ -11,81 +11,35 @@ $events = json_decode($content, true);
 
 
 
-// Validate parsed JSON data
-if (!is_null($events['events'])) {
-	// Loop through each event
-	foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$text = $event['message']['text'];
+$requestBodyObject = json_decode($content);
+$requestContent = $requestBodyObject->result{0}->content;
+$requestText = $requestContent->text; 
+$requestFrom = $requestContent->from; 
+$contentType = $requestContent->contentType; 
 
-			// Get replyToken
-			$replyToken = $event['replyToken'];
+$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
-			// Build message to reply back
-			$messages = [
-			
-			
-				     'type' => 'text',
-				     'text' => "Hello, user"
-			
+$responseText = 'test'
 
-			];
-
-
-			
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages]
-			];
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
-		}
-	}
-}
-$json = json_encode(
-    array(
-        1 => array(
-            'English' => array(
-                'One',
-                'January'
-            ),
-            'French' => array(
-                'Une',
-                'Janvier'
-            )
-        )
-    )
-);
-
-// Define the errors.
-$constants = get_defined_constants(true);
-$json_errors = array();
-foreach ($constants["json"] as $name => $value) {
-    if (!strncmp($name, "JSON_ERROR_", 11)) {
-        $json_errors[$value] = $name;
+$responseMessage =
+    {
+      "to":["{$requestFrom}"],
+      "toChannel":1383378250,
+      "eventType":"138311608800106203",
+      "content":{
+        "contentType":1,
+        "toType":1,
+        "text":"{$responseText}"
+      }
     }
-}
 
-// Show the errors for different depths.
-foreach (range(4, 3, -1) as $depth) {
-    var_dump(json_decode($json, true, $depth));
-   
-}
-
+$curl = curl_init('https://trialbot-api.line.me/v1/events');
+  curl_setopt($curl, CURLOPT_POST, true);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $responseMessage);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
+  curl_setopt($curl, CURLOPT_HTTPPROXYTUNNEL, 1);
+  curl_setopt($curl, CURLOPT_PROXY, getenv('FIXIE_URL'));
+  $output = curl_exec($curl);
 
 echo "OK11";
