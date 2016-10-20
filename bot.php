@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$messages = ['type' => 'text',
-				     'text' => $text
+				     'text' => "hello"
 			];
 
 
@@ -82,5 +82,4 @@ foreach (range(4, 3, -1) as $depth) {
     echo 'Last error: ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
 }
 
-echo
 echo "OK11";
