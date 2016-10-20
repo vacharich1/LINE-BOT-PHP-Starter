@@ -24,20 +24,10 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = json_encode(
-    array(
-        1 => array(
-            'English' => array(
-                'One',
-                'January'
-            ),
-            'French' => array(
-                'Une',
-                'Janvier'
-            )
-        )
-    )
-);
+			$messages = ['type' => 'text',
+				     'text' => "Hello, world"
+			];
+
 
 			
 			// Make a POST Request to Messaging API to reply to sender
