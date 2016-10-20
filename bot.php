@@ -28,13 +28,18 @@ if (!is_null($events['events'])) {
 				     'text' => 'hello'
 			];
 
+			$messages2 = ['type' => 'image',
+				     'originalContentUrl' => 'http://lifenlesson.com/wp-content/uploads/2015/11/Game-Dreams-Interpretation-04.png',
+				      'previewImageUrl' => 'http://lifenlesson.com/wp-content/uploads/2015/11/Game-Dreams-Interpretation-04.png'
+			];
+
 			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1]
+				'messages' => [$messages,$messages1,$messages2]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
