@@ -24,8 +24,12 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = ['type' => 'text',
-				     'text' => $text
+			$messages = = array[
+				'type' => 'text',
+    				"title" => "JavaScript: The Definitive Guide",
+    				"author" => "David Flanagan",
+    				"edition" => 6
+			
 			];
 
 			
