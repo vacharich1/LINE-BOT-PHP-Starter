@@ -41,12 +41,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages3 = ['type' => 'imagemap',
-				     'baseUrl' => 'http://www.investorz.com/chart/AOT.BK#',
-				     'altText' => 'this is an imagemap',
-				     'baseSize'=> [
-    						"height": 1040,
-      						"width": 1040
-  					]
+				     'baseUrl' => 'http://www.investorz.com/chart/AOT.BK'
 					
 			];
 
