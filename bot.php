@@ -24,9 +24,9 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = Array[
-			
+			$messages = array[
 			[
+			
 				     'type' => 'text',
 				     'text' => "Hello, user"
 			]
@@ -87,6 +87,5 @@ foreach (range(4, 3, -1) as $depth) {
    
 }
 
-echo
 
 echo "OK11";
