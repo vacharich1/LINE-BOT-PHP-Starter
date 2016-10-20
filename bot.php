@@ -29,8 +29,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'http://lifenlesson.com/wp-content/uploads/2015/11/Game-Dreams-Interpretation-04.png',
-				      'previewImageUrl' => 'http://lifenlesson.com/wp-content/uploads/2015/11/Game-Dreams-Interpretation-04.png'
+				     'originalContentUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
+				      'previewImageUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
 			];
 
 			
