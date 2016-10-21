@@ -1,4 +1,15 @@
 ﻿<?php
+
+
+header("Content-type:text/html; charset=UTF-8");          
+header("Cache-Control: no-store, no-cache, must-revalidate");         
+header("Cache-Control: post-check=0, pre-check=0", false);         
+if($_GET['rev']==1){  
+    echo date("Y-m-d H:i:s");  
+    exit;  
+}  
+
+
 $access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
