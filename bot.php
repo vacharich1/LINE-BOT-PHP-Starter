@@ -51,33 +51,13 @@ if (!is_null($events['events'])) {
 				      'previewImageUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
 			];
 
-			$buttons = LINE::Bot::API::Builder::TemplateMessage->new_buttons(
-        alt_text  => 'this is a buttons template',
-        image_url => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
-        title     => 'buttons',
-        text      => 'description',
-    )->add_postback_action(
-        label => 'postback',
-        data  => 'postback data',
-        text  => 'postback message',
-    )->add_message_action(
-        label => 'message',
-        text  => 'message',
-    )->add_uri_action(
-        label => 'uri',
-        uri   => 'http://example.com/',
-    )->add_message_action(
-        label => 'message2',
-        text  => 'message2',
-    );
 
-			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1,$messages2,$buttons]
+				'messages' => [$messages,$messages1,$messages2]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
