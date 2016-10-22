@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://github.com/vacharich1/LINE-BOT-PHP-Starter/blob/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
-				     'previewImageUrl' => 'https://github.com/vacharich1/LINE-BOT-PHP-Starter/blob/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
+				     'originalContentUrl' => 'https://github.com/vacharich1/LINE-BOT-PHP-Starter/blob/master/golf-ball-clip-art-black-and-white-niX89GjAT1.gif',
+				     'previewImageUrl' => 'https://github.com/vacharich1/LINE-BOT-PHP-Starter/blob/master/golf-ball-clip-art-black-and-white-niX89GjAT1.gif'
 			];
 
 			
