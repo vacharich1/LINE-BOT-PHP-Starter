@@ -1,14 +1,48 @@
 ﻿<?php
 
+$HOST_NAME = "sql6.freemysqlhosting.net";
+	$DB_NAME = "sql6141179";
+	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
+ 
+	$USERNAME = "sql6141179";     // ตั้งค่าตามการใช้งานจริง
+	$PASSWORD = "2VSm3JEfdX";  // ตั้งค่าตามการใช้งานจริง
+ 
+ 
+	try {
+		
+	
+		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
+	
+		echo "connect";
+	
+	
+	} catch (PDOException $e) {
+	
+		echo "connot connect".$e->getMessage();
+		echo "assacc";
+	
+	}
 
-header("Content-type:text/html; charset=UTF-8");          
-header("Cache-Control: no-store, no-cache, must-revalidate");         
-header("Cache-Control: post-check=0, pre-check=0", false);         
-if($_GET['rev']==1){  
-    echo date("Y-m-d H:i:s");  
-    exit;  
-}  
-
+try {
+	
+		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
+	
+		//echo "เชื่อมต่อฐานข้อมูลสำเร็จ";
+		
+		// คำสั่ง SQL
+		$sql = "SELECT * FROM book";
+	
+		$query = $db->query($sql);
+	
+		//echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
+		
+		// เปลี่ยนมาใช้ fecth()
+		//echo "<pre>".print_r($query->fetch(), true)."</pre>"; 
+		
+		// วนซ้ำ แสดงผลทั้งหมด
+		while($row = $query->fetch()) {
+			echo "<pre>".print_r($row, true)."</pre>";
+		}
 
 $access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=';
 
