@@ -1,6 +1,6 @@
 ﻿<?php
  
-$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/";
+$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/pma/";
 	$DB_NAME = "1246984";
  
 	$USERNAME = "1246984";     // ตั้งค่าตามการใช้งานจริง
