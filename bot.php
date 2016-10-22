@@ -15,12 +15,19 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 
 		//echo "เชื่อมต่อฐานข้อมูลสำเร็จ";
 		
-		// คำสั่ง SQL
-		$sql = "SELECT *FROM book";
+		$sql = "SELECT * FROM book";
 	
 		$query = $db->query($sql);
 	
-		echo($query->fetchAll()); // สั่งแสดงผลอาเรย์ (array)
+		//echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
+		
+		// เปลี่ยนมาใช้ fecth()
+		//echo "<pre>".print_r($query->fetch(), true)."</pre>"; 
+		
+		// วนซ้ำ แสดงผลทั้งหมด
+		while($row = $query->fetch()) {
+			echo "<pre>".print_r($row, true)."</pre>";
+		}
 	
 		echo "connect";
 	
