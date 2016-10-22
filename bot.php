@@ -19,10 +19,10 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 	
 		$query = $db->query($sql);
 	
-		//echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
+		echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
 		
 		// เปลี่ยนมาใช้ fecth()
-		//echo "<pre>".print_r($query->fetch(), true)."</pre>"; 
+		echo "<pre>".print_r($query->fetch(), true)."</pre>"; 
 		
 		// วนซ้ำ แสดงผลทั้งหมด
 		while($row = $query->fetch()) {
