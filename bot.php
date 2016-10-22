@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'LINE-BOT-PHP-Starter/Desert.jpg',
-				     'previewImageUrl' => 'LINE-BOT-PHP-Starter/Desert.jpg'
+				     'originalContentUrl' => 'https://github.com/vacharich1/LINE-BOT-PHP-Starter/blob/master/Desert.jpg',
+				     'previewImageUrl' => 'https://github.com/vacharich1/LINE-BOT-PHP-Starter/blob/master/Desert.jpg'
 			];
 
 			
