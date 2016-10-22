@@ -50,49 +50,6 @@ if (!is_null($events['events'])) {
 				     'originalContentUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
 				      'previewImageUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
 			];
-			$imagemap = 	array(
-   						'type' => 'imagemap',
-   						'baseUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
-   						'altText' => 'this is an imagemap',
-   						'baseSize' => 
- 								array(
-     									'height' => 240,
-     									'width' => 240,
- 									 ),
-   						'actions' => 
-  								array (
-    								0 => 
-    								array(
-       									'type' => 'uri',
-       									'linkUri' => 'https://example.com/',
-       								'area' => 
-      									array(
-         									'x' => 0,
-         									'y' => 0,
-         									'width' => 520,
-     									        'height' => 1040,
-      									      ),
-    								),   
-    								array(
-       									'type' => 'message',
-       									'text' => 'hello',
-      								'area' => 
-     								array(
-         								'x' => 520,
-         								'y' => 0,
-         								'width' => 520,
-         								'height' => 1040,
-      									)
-    								)
-  							)
-						)
-                                    
-
-
-
-
-
-
 
 
 			// Make a POST Request to Messaging API to reply to sender
