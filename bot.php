@@ -15,21 +15,6 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 	
 		echo "connect";
 
-		//echo "เชื่อมต่อฐานข้อมูลสำเร็จ";
-		
-		// คำสั่ง SQL
-		$sql = "SELECT * FROM test";
-	
-		$query = $db->query($sql);
-	
-		//echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
-		
-		// เปลี่ยนมาใช้ fecth()
-		//echo "<pre>".print_r($query->fetch(), true)."</pre>"; 
-		
-		// วนซ้ำ แสดงผลทั้งหมด
-		while($row = $query->fetch()) {
-			echo "<pre>".print_r($row, true)."</pre>";
 		}
 	
 	
