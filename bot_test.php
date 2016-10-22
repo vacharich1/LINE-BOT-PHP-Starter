@@ -4,7 +4,7 @@ $HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/";
 	$DB_NAME = "test";
 	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
  
-	$USERNAME = "1246984";     // ตั้งค่าตามการใช้งานจริง
+	$USERNAME = "1246984@localhost";     // ตั้งค่าตามการใช้งานจริง
 	$PASSWORD = "p1a6n3g1ya";  // ตั้งค่าตามการใช้งานจริง
  
  
