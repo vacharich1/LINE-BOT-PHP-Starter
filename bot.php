@@ -13,12 +13,14 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 	
 		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
 
-		$sql = "SELECT * FROM test";
+		//echo "เชื่อมต่อฐานข้อมูลสำเร็จ";
+		
+		// คำสั่ง SQL
+		$sql = "SELECT *FROM book";
 	
 		$query = $db->query($sql);
 	
-		  echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
-		
+		print_r($query->fetchAll()); // สั่งแสดงผลอาเรย์ (array)
 	
 		echo "connect";
 	
