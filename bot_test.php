@@ -1,6 +1,7 @@
 ﻿<?php
+ 
 $HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/";
-	$DB_NAME = "1246984";
+	$DB_NAME = "test";
 	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
  
 	$USERNAME = "1246984";     // ตั้งค่าตามการใช้งานจริง
@@ -19,3 +20,5 @@ $HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/";
 		echo "ไม่สามารถเชื่อมต่อฐานข้อมูลได้ : ".$e->getMessage();
 	
 	}
+ 
+?>
