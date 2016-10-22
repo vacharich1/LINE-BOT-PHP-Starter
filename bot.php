@@ -12,6 +12,20 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 		
 	
 		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
+
+		$sql = "SELECT * FROM test";
+	
+		$query = $db->query($sql);
+	
+		//echo "<pre>".print_r($query->fetchAll(), true)."</pre>"; 
+		
+		// เปลี่ยนมาใช้ fecth()
+		//echo "<pre>".print_r($query->fetch(), true)."</pre>"; 
+		
+		// วนซ้ำ แสดงผลทั้งหมด
+		while($row = $query->fetch()) {
+			echo "<pre>".print_r($row, true)."</pre>";
+		}
 	
 		echo "connect";
 	
