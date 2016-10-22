@@ -1,9 +1,9 @@
 ﻿<?php
  
-$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/pma/";
+	$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/pma/";
 	$DB_NAME = "1246984";
  
-	$USERNAME = "1246984";     // ตั้งค่าตามการใช้งานจริง
+	$USERNAME = "1246984@localhost";     // ตั้งค่าตามการใช้งานจริง
 	$PASSWORD = "1234";  // ตั้งค่าตามการใช้งานจริง
  
  
