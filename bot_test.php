@@ -1,4 +1,5 @@
-﻿$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/";
+﻿<?php
+$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/";
 	$DB_NAME = "1246984";
 	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
  
