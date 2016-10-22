@@ -1,6 +1,6 @@
 ﻿<?php
  
-	$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/pma/";
+	$HOST_NAME = "http://botlinebyjfourtwins.orgfree.com/pma/index.php?db=1246984&token=73b82e1c10c93817bdcca80dd457c144";
 	$DB_NAME = "1246984";
 	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
  
