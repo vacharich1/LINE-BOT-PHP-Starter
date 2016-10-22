@@ -20,7 +20,7 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 	
 		$query = $db->query($sql);
 	
-		print_r($query->fetchAll()); // สั่งแสดงผลอาเรย์ (array)
+		echo($query->fetchAll()); // สั่งแสดงผลอาเรย์ (array)
 	
 		echo "connect";
 	
