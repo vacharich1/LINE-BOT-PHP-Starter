@@ -31,14 +31,6 @@ $access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00n
 // Get POST body content
 $content = file_get_contents('php://input');
 
-$myfile = fopen("hoon.txt", "w") or die("Unable to open file!");
-$txt = "John Doe\n";
-fwrite($myfile, $txt);
-$txt = "Jane Doe\n";
-fwrite($myfile, $txt);
-fclose($myfile);
-
-
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
@@ -72,7 +64,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1,$messages2,$imagemap]
+				'messages' => [$messages,$messages1,$messages2]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
