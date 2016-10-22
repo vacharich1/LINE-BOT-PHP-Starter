@@ -14,23 +14,11 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
 	
 		echo "connect";
-	
-	
-	} catch (PDOException $e) {
-	
-		echo "connot connect".$e->getMessage();
-		echo "assacc";
-	
-	}
 
-try {
-	
-		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
-	
 		//echo "เชื่อมต่อฐานข้อมูลสำเร็จ";
 		
 		// คำสั่ง SQL
-		$sql = "SELECT * FROM book";
+		$sql = "SELECT * FROM test";
 	
 		$query = $db->query($sql);
 	
@@ -43,7 +31,15 @@ try {
 		while($row = $query->fetch()) {
 			echo "<pre>".print_r($row, true)."</pre>";
 		}
-    }
+	
+	
+	} catch (PDOException $e) {
+	
+		echo "connot connect".$e->getMessage();
+		echo "assacc";
+	
+	}
+
 
 $access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=';
 
