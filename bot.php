@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
-				     'previewImageUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
+				     'originalContentUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/desert.jpg',
+				     'previewImageUrl' => 'https://raw.githubusercontent.com/vacharich1/LINE-BOT-PHP-Starter/master/desert.jpg'
 			];
 
 			
