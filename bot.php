@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/golf-ball-clip-art-black-and-white-niX89GjAT.gif',
-				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/golf-ball-clip-art-black-and-white-niX89GjAT.gif'
+				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
+				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
 			];
 
 			
