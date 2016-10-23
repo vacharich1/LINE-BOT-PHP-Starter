@@ -1,12 +1,21 @@
 ﻿<?php
 
-$HOST_NAME = "sql6.freemysqlhosting.net";
-	$DB_NAME = "sql6141179";
-	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
+$host= "sql6.freemysqlhosting.net";
+	$db = "sql6141179";
+	$CHAR_SET = "charset=utf8"; 
  
-	$USERNAME = "sql6141179";     // ตั้งค่าตามการใช้งานจริง
-	$PASSWORD = "2VSm3JEfdX";  // ตั้งค่าตามการใช้งานจริง
- 
+	$username = "sql6141179";    
+	$password = "2VSm3JEfdX";   
+	
+
+	$link = mysqli_connect($host, $username, $password, $db);
+	if (!$link) {
+    		die('Could not connect: ' . mysqli_connect_errno());
+	}
+	else
+	{
+		echo "connect";
+	}
  
 	/*try {
 		
