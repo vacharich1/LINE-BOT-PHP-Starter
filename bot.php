@@ -90,9 +90,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
 			
-			$messages3 = ['type' => 'text','text' => 'aaa'];
+			$messages3 = ['type' => 'text','text' => $hoonname];
 
-			$messages1 = ['type' => 'text','text' => 'bbb'];
+			$messages1 = ['type' => 'text','text' => $timeframe];
 
 			$messages2 = ['type' => 'image',
 				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
@@ -103,7 +103,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1,,$messages3,$messages2]
+				'messages' => [$messages,$messages1,$messages3,$messages2]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
