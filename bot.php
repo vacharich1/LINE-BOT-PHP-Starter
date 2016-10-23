@@ -47,7 +47,7 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$text = $event['message']['text'];
+$text = $events['message']['text'];
 
 echo $text;
 // Validate parsed JSON data
