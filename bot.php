@@ -1,6 +1,6 @@
 ﻿<?php
 
-$HOST_NAME = "sql6.freemysqlhosting.net";
+        $HOST_NAME = "sql6.freemysqlhosting.net";
 	$DB_NAME = "sql6141179";
 	$CHAR_SET = "charset=utf8"; // เช็ตให้อ่านภาษาไทยได้
  

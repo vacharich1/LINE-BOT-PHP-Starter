@@ -9,13 +9,13 @@
 if(isset($_POST['submit']))
 {
 	
-	//mysql_connect("localhost","admin","");
-	$host= "localhost";
-	$db = "test";
+	//mysql_connect("sql6.freemysqlhosting.net","sql6141179","2VSm3JEfdX");
+	$host= "sql6.freemysqlhosting.net";
+	$db = "sql6141179";
 	$CHAR_SET = "charset=utf8"; 
  
-	$username = "admin";    
-	$password = "";   
+	$username = "sql6141179";    
+	$password = "2VSm3JEfdX";   
 	
 	//mysqli_connect($host, $username, $password)or die('failed');
 	//mysqli_query('set names utf8');
