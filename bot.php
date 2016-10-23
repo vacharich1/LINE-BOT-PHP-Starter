@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
-				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
+				     'originalContentUrl' => 'http://img.tarad.com/shop/u/usedgolf/img-lib/spd_20110711173537_b.JPG',
+				     'previewImageUrl' => 'http://img.tarad.com/shop/u/usedgolf/img-lib/spd_20110711173537_b.JPG'
 			];
 
 			
