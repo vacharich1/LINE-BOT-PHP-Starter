@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'http://cn.lnwfile.com/_/cn/_raw/wm/w3/uc.jpg',
-				     'previewImageUrl' => 'http://cn.lnwfile.com/_/cn/_raw/wm/w3/uc.jpg'
+				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
+				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
 			];
 
 			
