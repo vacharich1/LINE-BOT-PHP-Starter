@@ -54,46 +54,49 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
-
-			// Get replyToken
-			$replyToken = $event['replyToken'];
-
-			// Build message to reply back
-			$messages = ['type' => 'text',
-				     'text' => $text
-			];
-
-			$messages1 = ['type' => 'text',
-				     'text' => 'test1'
-			];
-
-			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://s3.amazonaws.com/livebitcoinnews/2014/08/what-is-bitcoin.jpg',
-				     'previewImageUrl' => 'https://s3.amazonaws.com/livebitcoinnews/2014/08/what-is-bitcoin.jpg'
-			];
-
+			$pieces = explode(" ", $text);
+			$result = count($a);
+			if($result==3)
+			{
 			
 
+				// Get replyToken
+				$replyToken = $event['replyToken'];
+	
+				// Build message to reply back
+				$messages = ['type' => 'text',
+						 'text' => $text
+				];
+	
+	
+				$messages2 = ['type' => 'image',
+						 'originalContentUrl' => 'https://s3.amazonaws.com/livebitcoinnews/2014/08/what-is-bitcoin.jpg',
+						 'previewImageUrl' => 'https://s3.amazonaws.com/livebitcoinnews/2014/08/what-is-bitcoin.jpg'
+				];
+	
+				
+	
+	
+				// Make a POST Request to Messaging API to reply to sender
+				$url = 'https://api.line.me/v2/bot/message/reply';
+				$data = [
+					'replyToken' => $replyToken,
+					'messages' => [$messages,$messages2]
+				];
+				$post = json_encode($data);
+				$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+	
+				$ch = curl_init($url);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+				$result = curl_exec($ch);
+				curl_close($ch);
 
-			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/reply';
-			$data = [
-				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1,$messages2]
-			];
-			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-
-			$ch = curl_init($url);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$result = curl_exec($ch);
-			curl_close($ch);
-
-			echo $result . "\r\n";
+				echo $result . "\r\n";
+			}
 		}
 	}
 }
