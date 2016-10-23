@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages1 = ['type' => 'text',
-				     'text' => 'test'
+				     'text' => 'test1'
 			];
 
 			$messages2 = ['type' => 'image',
