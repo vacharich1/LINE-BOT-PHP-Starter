@@ -46,6 +46,10 @@ $content = file_get_contents('php://input');
 
 // Parse JSON
 $events = json_decode($content, true);
+
+$text = $event['message']['text'];
+
+echo $text;
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
@@ -68,8 +72,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'http://img.tarad.com/shop/u/usedgolf/img-lib/spd_20110711173537_b.JPG',
-				     'previewImageUrl' => 'http://img.tarad.com/shop/u/usedgolf/img-lib/spd_20110711173537_b.JPG'
+				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
+				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
 			];
 
 			
