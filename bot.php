@@ -90,9 +90,9 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
 			
-			$messages3 = ['type' => 'text','text' => $hoonname];
+			$messages3 = ['type' => 'text','text' => 'aaa'];
 
-			$messages1 = ['type' => 'text','text' => $timeframe];
+			$messages1 = ['type' => 'text','text' => 'bbb'];
 
 			$messages2 = ['type' => 'image',
 				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
