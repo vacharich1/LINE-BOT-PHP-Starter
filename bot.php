@@ -8,7 +8,7 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 	$PASSWORD = "2VSm3JEfdX";  // ตั้งค่าตามการใช้งานจริง
  
  
-	try {
+	/*try {
 		
 	
 		$db = new PDO('mysql:host='.$HOST_NAME.';dbname='.$DB_NAME.';'.$CHAR_SET,$USERNAME,$PASSWORD);
@@ -37,7 +37,7 @@ $HOST_NAME = "sql6.freemysqlhosting.net";
 		echo "connot connect".$e->getMessage();
 		echo "assacc";
 	
-	}
+	}*/
 
 $access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=';
 
@@ -47,9 +47,6 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-$text = $events['message']['text'];
-
-echo $text;
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
@@ -58,26 +55,47 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+			
+			
+			
+			$textcut = explode(" ", $text);
+			$result = count($textcut);
+			if($result <= 2)
+			{
+					$count_text_cut = strlen($textcut[0]);
+					$x=0;
+					//echo $count_text_cut;
+					$hoonname = substr($textcut[0], 1); // cut@
+					if($result == 2)
+						$timeframe = $textcut[1];
+					echo $hoonname;
+					
+					
+					$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
+					VALUES ('', '$hoonname', '$timeframe')";
+	
+					if (mysqli_query($link, $sql)) {
+							echo "New record created successfully";
+					} 
+					else {
+							echo "Error: " . $sql . "<br>" . mysqli_error($link);
+					}
+						echo "work code";	
+			}
+	
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$messages = ['type' => 'text',
-				     'text' => $text
-			];
+			$messages = ['type' => 'text','text' => $text];
 
-			$messages1 = ['type' => 'text',
-				     'text' => 'hello'
-			];
+			$messages1 = ['type' => 'text','text' => "hello"];
 
 			$messages2 = ['type' => 'image',
 				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
 				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
 			];
-
-			
-
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
