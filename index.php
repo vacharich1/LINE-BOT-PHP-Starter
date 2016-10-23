@@ -1,34 +1,55 @@
-# in the synopsis.psgi
-    use strict;
-    use warnings;
-    use LINE::Bot::API;
-    use LINE::Bot::API::Builder::SendMessage;
-    use Plack::Request;
+<body>
+<form action="index.php" method="POST" enctype="multipart/form-data">
+	<input type="file" name="image" /><input type="submit" name="submit" value="upload" />
+	
+</form>
+<?php
 
-    my $bot = LINE::Bot::API->new(
-        channel_secret       => '3692fbc3db90c226b12e3f91130e2f9f',
-        channel_access_token => 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=',
-    );
 
-    sub {
-        my $req = Plack::Request->new(shift);
+if(isset($_POST['submit']))
+{
+	
+	//mysql_connect("localhost","admin","");
+	$host= "localhost";
+	$db = "test";
+	$CHAR_SET = "charset=utf8"; 
+ 
+	$username = "admin";    
+	$password = "";   
+	
+	//mysqli_connect($host, $username, $password)or die('failed');
+	//mysqli_query('set names utf8');
+	//mysqli_select_db($db)or die('select filae');
+	
+		$link = mysqli_connect($host, $username, $password, $db);
+		if (!$link) {
+    			die('Could not connect: ' . mysqli_connect_errno());
+		}
 
-        unless ($req->method eq 'POST' && $req->path eq '/callback') {
-            return [200, [], ['Not Found']];
-        }
+	//mysql_select_db("test");	
+	
+	$imageName = mysqli_real_escape_string($link, $_FILES["image"]["name"]);
+	$imageData = mysqli_real_escape_string($link, file_get_contents($_FILES["image"]["tmp_name"]));
+	$imageType = mysqli_real_escape_string($link, $_FILES["image"]["type"]);
+	
+	if(substr($imageType,0,5) == "image")
+	{
+		
+		$sql = "INSERT INTO images (id, name, image)
+				VALUES ('', '$imageName', '$imageData')";
 
-        unless ($bot->validate_signature($req->content, $req->header('X-Line-Signature'))) {
-            return [200, [], ['failed to validate signature']];
-        }
+		if (mysqli_query($link, $sql)) {
+    			echo "New record created successfully";
+		} else {
+    			echo "Error: " . $sql . "<br>" . mysqli_error($link);
+		}
+		echo "work code";	
+	}
+	else
+	{
+		echo"Only images are allowed";	
+	}
+}
+?>
 
-        my $events = $bot->parse_events_from_json($req->content);
-        for my $event (@{ $events }) {
-            next unless $event->is_message_event && $event->is_text_message;
-
-            my $messages = LINE::Bot::API::Builder::SendMessage->new;
-            $messages->add_text( text => $event->text );
-            $bot->reply_message($event->reply_token, $messages->build);
-        }
-
-        return [200, [], ["OK"]];
-    };
+</body>
