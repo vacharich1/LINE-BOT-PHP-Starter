@@ -68,8 +68,8 @@ if (!is_null($events['events'])) {
 			];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
-				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
+				     'originalContentUrl' => 'https://s3.amazonaws.com/livebitcoinnews/2014/08/what-is-bitcoin.jpg',
+				     'previewImageUrl' => 'https://s3.amazonaws.com/livebitcoinnews/2014/08/what-is-bitcoin.jpg'
 			];
 
 			
