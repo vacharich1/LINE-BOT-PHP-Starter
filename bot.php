@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 					$hoonname = substr($textcut[0], 1); // cut@
 					if($result == 2)
 						$timeframe = $textcut[1];
-					#echo $hoonname;
+					echo $hoonname;
 					
 					
 					$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
