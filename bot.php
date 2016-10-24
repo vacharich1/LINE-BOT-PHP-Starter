@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
 						#echo "work code";	
 			}
 			echo "check0";
-			sleep(10);
+			#sleep(10);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -127,8 +127,8 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
-			echo "check1";
-			sleep(10);
+			#echo "check1";
+			#sleep(10);
 			#echo $result . "\r\n";
 		}
 	}
