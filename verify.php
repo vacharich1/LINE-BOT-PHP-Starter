@@ -2,8 +2,9 @@
 
 require_once'bot.php';
 $var_value = $_SESSION['varname'];
-print_r($_POST);
-
-echo "aaaaa";
+if($var_value == "check1")
+	echo "capture";
+else
+	echo "no data base";
 
 ?>

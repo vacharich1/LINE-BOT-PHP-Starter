@@ -92,7 +92,7 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
-			$var_value="1";
+			$var_value="check1";
 			$_SESSION['varname'] = $var_value;
 
 			#sleep(10);
