@@ -1,14 +1,5 @@
 ﻿<?php
 
-session_start();
-$_SESSION['favcolor'] = 'green';
-
-// Works if session cookie was accepted
-echo '<br /><a href="verify.php">page 2</a>';
-				
-// Or maybe pass along the session id, if needed
-echo '<br /><a href="verify.php?' . SID . '">page 2</a>';
-
 $host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
 	$CHAR_SET = "charset=utf8"; 
@@ -23,7 +14,7 @@ $host= "sql6.freemysqlhosting.net";
 	}
 	else
 	{
-		#echo "connect";
+		echo "connect";
 	}
  
 	/*try {
@@ -91,7 +82,17 @@ if (!is_null($events['events'])) {
 					
 					$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
 					VALUES ('', '$hoonname', '$timeframe')";
+					
+					if (mysqli_query($link, $sql)) {
+							echo "New record created successfully";
+					} 
+					else {
+							#echo "Error: " . $sql . "<br>" . mysqli_error($link);
+					}
 					sleep(1);
+						#echo "work code";
+					$sql = "INSERT INTO check_capture (id, check)
+					VALUES (111, 'check1')";
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
 					} 
@@ -101,8 +102,18 @@ if (!is_null($events['events'])) {
 						#echo "work code";	
 			}
 
-				
+			$sql ="SELECT * FROM hoon_check"
+			$result = $conn->query($sql);
 
+			if ($result->num_rows > 0) {
+				// output data of each row
+				while($row = $result->fetch_assoc()) {
+					while($row["check"] == "check1")
+						echo "id: " . $row["id"]. "<br>";
+				}
+			} else {
+				echo "0 results";
+			}
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
