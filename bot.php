@@ -115,11 +115,7 @@ if (!is_null($events['events'])) {
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
 			$messages1 = ['type' => 'text','text' => $timeframe];
-			sleep(5);
-			sleep(5);
-			sleep(5);
-			sleep(5);
-			sleep(5);
+			
 			$messages2 = ['type' => 'image',
 				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
 				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
