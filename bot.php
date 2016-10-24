@@ -105,7 +105,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
+			$llll = "https://www.dropbox.com/home/AAAAAA_photo?preview=pic.jpg";
 			
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
@@ -118,8 +118,8 @@ if (!is_null($events['events'])) {
 			$messages1 = ['type' => 'text','text' => $llll];
 			
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png?dl=0',
-				     'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png?dl=0'
+				     'originalContentUrl' => 'https://www.dropbox.com/home/AAAAAA_photo?preview=pic.jpg',
+				     'previewImageUrl' => 'https://www.dropbox.com/home/AAAAAA_photo?preview=pic.jpg'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
