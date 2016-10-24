@@ -1,5 +1,5 @@
 ﻿<?php
-session_start();
+
 
 $host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
@@ -93,7 +93,7 @@ if (!is_null($events['events'])) {
 						#echo "work code";	
 			}
 
-				
+				session_start();
 				$_SESSION['favcolor'] = 'green';
 
 				// Works if session cookie was accepted
