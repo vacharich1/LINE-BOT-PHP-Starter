@@ -55,14 +55,16 @@ $content = file_get_contents('php://input');
 
 // Parse JSON
 $events = json_decode($content, true);
-
+echo "check0";
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
 	foreach ($events['events'] as $event) {
+		echo "check1";
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
+			echo "check2";
 			$text = $event['message']['text'];
 			
 			
@@ -91,7 +93,7 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
-			echo "check0";
+			
 			#sleep(10);
 
 			// Get replyToken
@@ -128,7 +130,7 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			
 			#echo "check1";
-			#sleep(10);
+			sleep(10);
 			#echo $result . "\r\n";
 		}
 	}
