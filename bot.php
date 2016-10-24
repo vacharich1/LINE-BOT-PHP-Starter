@@ -105,6 +105,8 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
+			$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
+			
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
 			sleep(5);
@@ -113,7 +115,7 @@ if (!is_null($events['events'])) {
 			sleep(5);
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
-			$messages1 = ['type' => 'text','text' => $timeframe];
+			$messages1 = ['type' => 'text','text' => $llll];
 			
 			$messages2 = ['type' => 'image',
 				     'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png?dl=0',
