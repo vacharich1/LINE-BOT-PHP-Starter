@@ -81,6 +81,8 @@ if (!is_null($events['events'])) {
 						$hoonname = substr($textcut[0], 1); // cut@
 						if($result == 2)
 							$timeframe = $textcut[1];
+						else
+							$timeframe ="d";
 						#echo $hoonname;
 						
 						
