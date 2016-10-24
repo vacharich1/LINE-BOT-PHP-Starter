@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 					else {
 							#echo "Error: " . $sql . "<br>" . mysqli_error($link);
 					}
-						#echo "work code";	
+						echo "work code";	
 			}
 			
 			#sleep(10);
