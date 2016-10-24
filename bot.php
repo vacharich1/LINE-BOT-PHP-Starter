@@ -14,7 +14,7 @@ $host= "sql6.freemysqlhosting.net";
 	}
 	else
 	{
-		echo "connect";
+		#echo "connect";
 	}
  
 	/*try {
@@ -77,21 +77,22 @@ if (!is_null($events['events'])) {
 					$hoonname = substr($textcut[0], 1); // cut@
 					if($result == 2)
 						$timeframe = $textcut[1];
-					echo $hoonname;
+					#echo $hoonname;
 					
 					
 					$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
 					VALUES ('', '$hoonname', '$timeframe')";
-	
+					sleep(1);
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
 					} 
 					else {
-							echo "Error: " . $sql . "<br>" . mysqli_error($link);
+							#echo "Error: " . $sql . "<br>" . mysqli_error($link);
 					}
-						echo "work code";	
+						#echo "work code";	
 			}
-	
+			echo "check0";
+			sleep(10);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -125,10 +126,12 @@ if (!is_null($events['events'])) {
 			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 			$result = curl_exec($ch);
 			curl_close($ch);
-
-			echo $result . "\r\n";
+			
+			echo "check1";
+			sleep(10);
+			#echo $result . "\r\n";
 		}
 	}
 }
 
-echo "OK11";
+#echo "OK11";
