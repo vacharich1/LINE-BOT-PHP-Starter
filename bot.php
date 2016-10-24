@@ -129,8 +129,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
-			$var_value="check0";
-			$_SESSION['varname'] = $var_value;
+			
 			#echo "check1";
 			#sleep(10);
 			#echo $result . "\r\n";
