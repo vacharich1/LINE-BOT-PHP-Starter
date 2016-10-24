@@ -111,8 +111,6 @@ if (!is_null($events['events'])) {
 			$messages = ['type' => 'text','text' => $text];
 			sleep(5);
 			sleep(5);
-			sleep(5);
-			sleep(5);
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
 			$messages1 = ['type' => 'text','text' => $llll];
