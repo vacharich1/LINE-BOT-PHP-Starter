@@ -5,7 +5,7 @@ session_start();
 
 
 
-echo $_SESSION['favcolor']; // green
+#echo $_SESSION['favcolor']; // green
 if($_SESSION['favcolor'] == "green")
 	echo "check"
 
