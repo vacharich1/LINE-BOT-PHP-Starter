@@ -113,7 +113,7 @@ if (!is_null($events['events'])) {
 			sleep(5);
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
-			$messages1 = ['type' => 'text','text' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png'];
+			$messages1 = ['type' => 'text','text' => "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png"];
 			
 			$messages2 = ['type' => 'image',
 				     'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png',
