@@ -92,8 +92,15 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
-			$var_value="check1";
-			$_SESSION['varname'] = $var_value;
+
+				
+				$_SESSION['favcolor'] = 'green';
+
+				// Works if session cookie was accepted
+				echo '<br /><a href="verify.php">page 2</a>';
+				
+				// Or maybe pass along the session id, if needed
+				echo '<br /><a href="verify.php?' . SID . '">page 2</a>';
 
 
 			// Get replyToken
