@@ -101,13 +101,16 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
-
+			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+			
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
-			
+			sleep(5);
+			sleep(1);
+			sleep(1);
+			sleep(1);
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
 			$messages1 = ['type' => 'text','text' => $timeframe];
