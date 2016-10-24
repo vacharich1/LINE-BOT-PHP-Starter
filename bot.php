@@ -101,7 +101,7 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
-			sleep(16);
+			sleep(20);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -114,8 +114,8 @@ if (!is_null($events['events'])) {
 			$messages1 = ['type' => 'text','text' => $timeframe];
 
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'http://ecx.images-amazon.com/images/I/41rz2RHe6aL._SL500_AA300_.jpg',
-				     'previewImageUrl' => 'http://ecx.images-amazon.com/images/I/41rz2RHe6aL._SL500_AA300_.jpg'
+				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
+				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
