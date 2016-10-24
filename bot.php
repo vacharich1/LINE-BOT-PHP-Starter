@@ -113,8 +113,7 @@ if (!is_null($events['events'])) {
 						
 						// Build message to reply back
 						$messages = ['type' => 'text','text' => $text];
-						sleep(5);
-						sleep(5);
+						sleep(3);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
 						$messages1 = ['type' => 'text','text' => $llll];
