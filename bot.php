@@ -95,7 +95,6 @@ if (!is_null($events['events'])) {
 			$var_value="check1";
 			$_SESSION['varname'] = $var_value;
 
-			sleep(30);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
