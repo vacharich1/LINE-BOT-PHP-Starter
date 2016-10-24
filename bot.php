@@ -1,13 +1,13 @@
 ﻿<?php
 
 session_start();
-				$_SESSION['favcolor'] = 'green';
+$_SESSION['favcolor'] = 'green';
 
-				// Works if session cookie was accepted
-				echo '<br /><a href="verify.php">page 2</a>';
+// Works if session cookie was accepted
+echo '<br /><a href="verify.php">page 2</a>';
 				
-				// Or maybe pass along the session id, if needed
-				echo '<br /><a href="verify.php?' . SID . '">page 2</a>';
+// Or maybe pass along the session id, if needed
+echo '<br /><a href="verify.php?' . SID . '">page 2</a>';
 
 $host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
