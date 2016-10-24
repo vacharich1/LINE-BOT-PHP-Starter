@@ -113,11 +113,11 @@ if (!is_null($events['events'])) {
 			sleep(5);
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
-			$messages1 = ['type' => 'text','text' => "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png"];
+			$messages1 = ['type' => 'text','text' => "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png?dl=0"];
 			
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png',
-				     'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png'
+				     'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png?dl=0',
+				     'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png?dl=0'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
