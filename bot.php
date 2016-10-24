@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
 			$var_value="check1";
 			$_SESSION['varname'] = $var_value;
 
-			#sleep(10);
+			sleep(10);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -130,7 +130,8 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
-			
+			$var_value="check0";
+			$_SESSION['varname'] = $var_value;
 			#echo "check1";
 			#sleep(10);
 			#echo $result . "\r\n";
