@@ -69,7 +69,7 @@ if (!is_null($events['events'])) {
 			
 			$textcut = explode(" ", $text);
 			$result = count($textcut);
-			$arr1=""
+			$arr1="";
 			if($result <= 2)
 			{
 					$count_text_cut = strlen($textcut[0]);
@@ -77,6 +77,7 @@ if (!is_null($events['events'])) {
 					$arr1 = str_split($textcut[0]);
 					if($arr1[0] == "@")
 					{
+						
 						//echo $count_text_cut;
 						$hoonname = substr($textcut[0], 1); // cut@
 						if($result == 2)
