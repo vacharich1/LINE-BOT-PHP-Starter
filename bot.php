@@ -90,9 +90,10 @@ if (!is_null($events['events'])) {
 							#echo "Error: " . $sql . "<br>" . mysqli_error($link);
 					}
 					sleep(1);
+					$check ="check1";
 						#echo "work code";
 					$sql = "INSERT INTO check_capture (id, check)
-					VALUES ('', 'check1')";
+					VALUES ('', $check)";
 					if (mysqli_query($link, $sql)) {
 							echo "New record created successfully";
 					} 
