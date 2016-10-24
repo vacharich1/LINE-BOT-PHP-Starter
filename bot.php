@@ -117,8 +117,8 @@ if (!is_null($events['events'])) {
 			$messages1 = ['type' => 'text','text' => $timeframe];
 			
 			$messages2 = ['type' => 'image',
-				     'originalContentUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png',
-				     'previewImageUrl' => 'https://obscure-harbor-99516.herokuapp.com/pic.png'
+				     'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png',
+				     'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png'
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
