@@ -101,6 +101,7 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
+			sleep(10);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -121,7 +122,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages,$messages1,$messages3]
+				'messages' => [$messages,$messages1,$messages2]
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
