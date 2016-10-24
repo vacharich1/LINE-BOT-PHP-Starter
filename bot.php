@@ -112,6 +112,7 @@ if (!is_null($events['events'])) {
 			sleep(5);
 			sleep(5);
 			sleep(5);
+			sleep(5);
 			$messages3 = ['type' => 'text','text' => $hoonname];
 
 			$messages1 = ['type' => 'text','text' => $timeframe];
