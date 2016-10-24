@@ -55,17 +55,15 @@ $content = file_get_contents('php://input');
 
 // Parse JSON
 $events = json_decode($content, true);
-echo "check0";
+
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
-	//foreach ($events['events'] as $event) {
-		echo "check1";
+	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		if ($events['events']['type'] == 'message' && $events['events']['message']['type'] == 'text') {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			echo "check2";
-			$text = $events['events']['message']['text'];
+			$text = $event['message']['text'];
 			
 			
 			
@@ -79,7 +77,7 @@ if (!is_null($events['events'])) {
 					$hoonname = substr($textcut[0], 1); // cut@
 					if($result == 2)
 						$timeframe = $textcut[1];
-					echo $hoonname;
+					#echo $hoonname;
 					
 					
 					$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
@@ -91,13 +89,12 @@ if (!is_null($events['events'])) {
 					else {
 							#echo "Error: " . $sql . "<br>" . mysqli_error($link);
 					}
-						echo "work code";	
+						#echo "work code";	
 			}
-			
 			#sleep(10);
 
 			// Get replyToken
-			$replyToken = $events['events']['replyToken'];
+			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
@@ -129,8 +126,10 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
+			echo $url;
+			
 			#echo "check1";
-			sleep(10);
+			#sleep(10);
 			#echo $result . "\r\n";
 		}
 	}
