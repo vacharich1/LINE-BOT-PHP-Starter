@@ -102,19 +102,6 @@ if (!is_null($events['events'])) {
 						#echo "work code";	
 			}
 
-			$sql ="SELECT * FROM hoon_check"
-			$result = $conn->query($sql);
-
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while($row = $result->fetch_assoc()) {
-					while($row["check"] == "check1")
-						echo "id: " . $row["id"]. "<br>";
-				}
-			} else {
-				echo "0 results";
-			}
-
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
