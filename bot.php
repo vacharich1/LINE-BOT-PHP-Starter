@@ -59,13 +59,13 @@ echo "check0";
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
-	foreach ($events['events'] as $event) {
+	//foreach ($events['events'] as $event) {
 		echo "check1";
 		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		if ($events['events']['type'] == 'message' && $events['events']['message']['type'] == 'text') {
 			// Get text sent
 			echo "check2";
-			$text = $event['message']['text'];
+			$text = $events['events']['message']['text'];
 			
 			
 			
@@ -97,7 +97,7 @@ if (!is_null($events['events'])) {
 			#sleep(10);
 
 			// Get replyToken
-			$replyToken = $event['replyToken'];
+			$replyToken = $events['events']['replyToken'];
 
 			// Build message to reply back
 			$messages = ['type' => 'text','text' => $text];
