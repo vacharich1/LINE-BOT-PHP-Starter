@@ -101,7 +101,7 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
-			sleep(15);
+			sleep(16);
 
 			// Get replyToken
 			$replyToken = $event['replyToken'];
