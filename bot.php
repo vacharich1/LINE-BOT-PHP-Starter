@@ -1,4 +1,5 @@
 ﻿<?php
+session_start();
 
 $host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
@@ -91,6 +92,9 @@ if (!is_null($events['events'])) {
 					}
 						#echo "work code";	
 			}
+			$var_value="1";
+			$_SESSION['varname'] = $var_value;
+
 			#sleep(10);
 
 			// Get replyToken
