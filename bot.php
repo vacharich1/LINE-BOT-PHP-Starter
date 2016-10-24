@@ -69,7 +69,6 @@ if (!is_null($events['events'])) {
 			
 			$textcut = explode(" ", $text);
 			$result = count($textcut);
-			$check_a="bbb";
 			if($result <= 2)
 			{
 					$count_text_cut = strlen($textcut[0]);
@@ -77,7 +76,7 @@ if (!is_null($events['events'])) {
 					$arr1 = str_split($textcut[0]);
 					if($arr1[0] == "@")
 					{
-						$check_a="aaa";
+		
 						//echo $count_text_cut;
 						$hoonname = substr($textcut[0], 1); // cut@
 						if($result == 2)
@@ -105,51 +104,50 @@ if (!is_null($events['events'])) {
 								echo "Error: " . $sql . "<br>" . mysqli_error($link);
 						}
 							#echo "work code";
+						// Get replyToken
+						$replyToken = $event['replyToken'];
+						
+						$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
+						
+						// Build message to reply back
+						$messages = ['type' => 'text','text' => $text];
+						sleep(5);
+						sleep(5);
+						$messages3 = ['type' => 'text','text' => $hoonname];
+			
+						$messages1 = ['type' => 'text','text' => $llll];
+						
+						$messages2 = ['type' => 'image',
+								 'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png',
+								 'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png'
+						];
+			
+						// Make a POST Request to Messaging API to reply to sender
+						$url = 'https://api.line.me/v2/bot/message/reply';
+						$data = [
+							'replyToken' => $replyToken,
+							'messages' => [$messages,$messages1,$messages2]
+						];
+						$post = json_encode($data);
+						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+			
+						$ch = curl_init($url);
+						curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+						curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+						$result = curl_exec($ch);
+						curl_close($ch);
+						
+						
+						#echo "check1";
+						#sleep(10);
+						#echo $result . "\r\n";
 					}
 			
-				if($check_a == "aaa")
-				{
-					// Get replyToken
-					$replyToken = $event['replyToken'];
-					
-					$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
-					
-					// Build message to reply back
-					$messages = ['type' => 'text','text' => $text];
-					sleep(5);
-					sleep(5);
-					$messages3 = ['type' => 'text','text' => $hoonname];
-		
-					$messages1 = ['type' => 'text','text' => $llll];
-					
-					$messages2 = ['type' => 'image',
-							 'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png',
-							 'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png'
-					];
-		
-					// Make a POST Request to Messaging API to reply to sender
-					$url = 'https://api.line.me/v2/bot/message/reply';
-					$data = [
-						'replyToken' => $replyToken,
-						'messages' => [$messages,$messages1,$messages2]
-					];
-					$post = json_encode($data);
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-		
-					$ch = curl_init($url);
-					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-					curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-					curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-					$result = curl_exec($ch);
-					curl_close($ch);
-					
-					
-					#echo "check1";
-					#sleep(10);
-					#echo $result . "\r\n";
-				}
+				
+				
 			}
 		}
 	}
