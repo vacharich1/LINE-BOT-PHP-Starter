@@ -131,8 +131,8 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $meta['displayName']];
-						sleep(5);
+						$messages = ['type' => 'text','text' => $text];
+						//sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
 						$messages1 = ['type' => 'text','text' => $llll];
