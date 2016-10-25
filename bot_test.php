@@ -1,139 +1,109 @@
 ﻿<?php
-echo "start";
-$access_token = 'AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=';
-
-echo "start1";
-
-// Get POST body content
-$content = file_get_contents('php://input');
-echo $content;
-// Parse JSON
-$events = json_decode($content, true);
-echo "start2";
-
-// Validate parsed JSON data
-if (!is_null($events['events'])) {
-// Loop through each event
-	foreach ($events['events'] as $event) {
-		$contentaaa = $event['content'];
-		$meta = $contentaaa['contentMetadata'];
-        echo 'user 編號 = ' . $meta['mid'];
-        echo '姓名 = ' . $meta['displayName'];
-		// Reply only when message sent is in 'text' format
-		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			$text = $event['message']['text'];
-			
-			
-			
-			$textcut = explode(" ", $text);
-			$result = count($textcut);
-			if($result <= 2)
-			{
-					$count_text_cut = strlen($textcut[0]);
-					$x=0;
-					$arr1 = str_split($textcut[0]);
-					if($arr1[0] == "@")
-					{
-		
-						//echo $count_text_cut;
-						$hoonname = substr($textcut[0], 1); // cut@
-						if($result == 2)
-							$timeframe = $textcut[1];
-						else
-							$timeframe ="d";
-						#echo $hoonname;
-						
-						
-						$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
-						VALUES ('', '$hoonname', '$timeframe')";
-						
-						if (mysqli_query($link, $sql)) {
-								echo "New record created successfully";
-						} 
-						else {
-								#echo "Error: " . $sql . "<br>" . mysqli_error($link);
-						}
-						sleep(0.3);
-						$check ="check1";
-						#echo "work code";
-						$sql = "INSERT INTO `check_capture`(`id`, `check`) VALUES ('','$check')";
-						if (mysqli_query($link, $sql)) {
-								echo "New record created successfully";
-						} 
-						else {
-								echo "Error: " . $sql . "<br>" . mysqli_error($link);
-						}
-							#echo "work code";
-						// Get replyToken
-						$replyToken = $event['replyToken'];
-						if($hoonname=="aot" or $hoonname=="AOT")
-							$llll = "https://www.dropbox.com/s/x2e2fx37guzaq3x/aot.png";
-						else if($hoonname == "tpch" or $hoonname == "TPCH")
-							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
-						else if($hoonname=="aav" or $hoonname=="AAV")
-							$llll = "https://www.dropbox.com/s/xx3m4erqo5bbjwm/aav.png";
-						else if($hoonname=="ptt" or $hoonname=="PTT")
-							$llll = "https://www.dropbox.com/s/qq3linskfg4pz5z/ptt.png";
-						else if($hoonname=="scc" or $hoonname=="SCC")
-							$llll = "https://www.dropbox.com/s/3ldbg8vyhjnl0cq/scc.png";
-						else if($hoonname=="ck" or $hoonname=="CK")
-							$llll = "https://www.dropbox.com/s/m93490z5z6lewg0/ck.png";
-						else if($hoonname=="dtac" or $hoonname=="DTAC")
-							$llll = "https://www.dropbox.com/s/rwiyh1djuhlepia/dtac.png";
-						else if($hoonname=="itd" or $hoonname=="ITD")
-							$llll = "https://www.dropbox.com/s/3dxufqovt6uaxrb/itd.png";
-						else if($hoonname=="scb" or $hoonname=="SCB")
-							$llll = "https://www.dropbox.com/s/hyfmb2n26amlsrx/scb.png";
-						else if($hoonname=="kbank" or $hoonname=="KABNK")
-							$llll = "https://www.dropbox.com/s/fy82hqmdvmfvvv9/kbank.png";
-						else if($hoonname=="thai" or $hoonname=="THAI")
-							$llll = "https://www.dropbox.com/s/5i185iegk3755tp/thai.png";
-						else if($hoonname=="true" or $hoonname=="TRUE")
-							$llll = "https://www.dropbox.com/s/j2rtcfffybha6bn/true.png";
-						else
-							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
-						// Build message to reply back
-						$messages = ['type' => 'text','text' => $contentaaa];
-						//sleep(5);
-						$messages3 = ['type' => 'text','text' => $hoonname];
-			
-						$messages1 = ['type' => 'text','text' => $llll];
-						
-						$messages2 = ['type' => 'image',
-								 'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/$hoonname.png',
-								 'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/$hoonname.png'
-						];
-			
-						// Make a POST Request to Messaging API to reply to sender
-						$url = 'https://api.line.me/v2/bot/message/reply';
-						$data = [
-							'replyToken' => $replyToken,
-							'messages' => [$messages,$messages1]
-						];
-						$post = json_encode($data);
-						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-			
-						$ch = curl_init($url);
-						curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-						curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-						curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-						$result = curl_exec($ch);
-						curl_close($ch);
-						
-						
-						#echo "check1";
-						#sleep(10);
-						#echo $result . "\r\n";
-					}
-			
-				
-				
-			}
-		}
-	}
+// アカウント情報設定
+$channel_id = "	1484765796";
+$channel_secret = "3692fbc3db90c226b12e3f91130e2f9f";
+$mid = "AYydB5m2TZasBEFQaZjNRTCTeC3d3oNKw77jzKd/mj3SAMlkABDK74AAJ6eN00no1+MiFoFV2N5pl1KIYZmlq8/WSmxf2b4WVhcvfjJoUH6TY6AZoQrYmAP/ny8krS0KwSMDOokFaUouicUyyIKmhQdB04t89/1O/w1cDnyilFU=";
+ 
+// 画像URL設定
+$original_content_url_for_image = "https://www.dropbox.com/s/x2e2fx37guzaq3x/aot.png";
+$preview_image_url_for_image = "https://www.dropbox.com/s/x2e2fx37guzaq3x/aot.png";
+ 
+// メッセージ受信
+$json_string = file_get_contents('php://input');
+$json_object = json_decode($json_string);
+$content = $json_object->result{0}->content;
+$text = $content->text;
+$from = $content->from;
+$message_id = $content->id;
+$content_type = $content->contentType;
+ 
+// ユーザ情報取得
+api_get_user_profile_request($from);
+ 
+// メッセージが画像、動画、音声であれば保存
+if (in_array($content_type, array(2, 3, 4))) {
+    api_get_message_content_request($message_id);
 }
-
-#echo "OK11";
+ 
+// メッセージコンテンツ生成
+$image_content = <<< EOM
+        "contentType":2,
+        "originalContentUrl":"{$original_content_url_for_image}",
+        "previewImageUrl":"{$preview_image_url_for_image}"
+EOM;
+ 
+// 受信メッセージに応じて返すメッセージを変更
+$event_type = "138311608800106203";
+if ($text == "マキビシ") {
+    $content = $image_content;
+} else { // 上記以外はtext送信
+    if ($content_type != 1) {
+        $text = "テキスト以外";
+    }
+$content = <<< EOM
+        "contentType":1,
+        "text":"{$text}...だと? マキビシくらいなはれ！"
+EOM;
+}
+$post = <<< EOM
+{
+    "to":["{$from}"],
+    "toChannel":1383378250,
+    "eventType":"{$event_type}",
+    "content":{
+        "toType":1,
+        {$content}
+    }
+}
+EOM;
+ 
+api_post_request("/v1/events", $post);
+ 
+function api_post_request($path, $post) {
+    $url = "https://trialbot-api.line.me{$path}";
+    $headers = array(
+        "Content-Type: application/json",
+        "X-Line-ChannelID: {$GLOBALS['channel_id']}",
+        "X-Line-ChannelSecret: {$GLOBALS['channel_secret']}",
+        "X-Line-Trusted-User-With-ACL: {$GLOBALS['mid']}"
+    );
+ 
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_POST, true);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $output = curl_exec($curl);
+    error_log($output);
+}
+ 
+function api_get_user_profile_request($mid) {
+    $url = "https://trialbot-api.line.me/v1/profiles?mids={$mid}";
+    $headers = array(
+        "X-Line-ChannelID: {$GLOBALS['channel_id']}",
+        "X-Line-ChannelSecret: {$GLOBALS['channel_secret']}",
+        "X-Line-Trusted-User-With-ACL: {$GLOBALS['mid']}"
+    ); 
+ 
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $output = curl_exec($curl);
+    error_log($output);
+}
+ 
+function api_get_message_content_request($message_id) {
+    $url = "https://trialbot-api.line.me/v1/bot/message/{$message_id}/content";
+    $headers = array(
+        "X-Line-ChannelID: {$GLOBALS['channel_id']}",
+        "X-Line-ChannelSecret: {$GLOBALS['channel_secret']}",
+        "X-Line-Trusted-User-With-ACL: {$GLOBALS['mid']}"
+    ); 
+ 
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $output = curl_exec($curl);
+    file_put_contents("/tmp/{$message_id}", $output);
+}
+?>
