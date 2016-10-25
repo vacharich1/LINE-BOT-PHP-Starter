@@ -1,5 +1,5 @@
 ﻿<?php
-
+echo "aaaaa";
 $host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
 	$CHAR_SET = "charset=utf8"; 
@@ -140,8 +140,8 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $event['souce']];
-						sleep(5);
+						$messages = ['type' => 'text','text' => $event['message']['text']];
+						//sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
 						$messages1 = ['type' => 'text','text' => $llll];
