@@ -55,6 +55,9 @@ $content = file_get_contents('php://input');
 
 // Parse JSON
 $events = json_decode($content, true);
+$con = json_decode($content, true);
+
+echo $con['displayName'];
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
