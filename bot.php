@@ -109,7 +109,7 @@ if (!is_null($events['events'])) {
 						// Get replyToken
 						$replyToken = $event['replyToken'];
 						
-						$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
+						$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/$hoonname.png";
 						
 						// Build message to reply back
 						$messages = ['type' => 'text','text' => $text];
