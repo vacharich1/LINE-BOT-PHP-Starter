@@ -119,8 +119,8 @@ if (!is_null($events['events'])) {
 						$messages1 = ['type' => 'text','text' => $llll];
 						
 						$messages2 = ['type' => 'image',
-								 'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png',
-								 'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/pic.png'
+								 'originalContentUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/$hoonname.png',
+								 'previewImageUrl' => 'https://www.dropbox.com/s/h6yztz70os1ily8/$hoonname.png'
 						];
 			
 						// Make a POST Request to Messaging API to reply to sender
