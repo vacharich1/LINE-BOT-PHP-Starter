@@ -90,13 +90,9 @@ if (!is_null($events['events'])) {
 							else
 								$timeframe ="d";
 							#echo $hoonname;
-							if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
-								$room='4';
-							else
-								$room='1';
 							
-							$sql = "INSERT INTO hoon_check (id, hoonname, timeframe, room)
-							VALUES ('', '$hoonname', '$timeframe','$room')";
+							$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
+							VALUES ('', '$hoonname', '$timeframe')";
 							
 							if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
