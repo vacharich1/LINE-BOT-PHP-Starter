@@ -60,10 +60,13 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 // Loop through each event
 	//1: printer
-	//2:jay
+	//2:jay black graph
 	//3:member_line_bot
+	//4:bot 3g 3r C941fb2b8a40f9d0f400969fa848c3386
+	//5:jay 1 graph
+	//6: jay free graph
 	foreach ($events['events'] as $event) {
-		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5')
+		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
 		{
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -87,10 +90,13 @@ if (!is_null($events['events'])) {
 							else
 								$timeframe ="d";
 							#echo $hoonname;
+							if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
+								$room='4';
+							else
+								$room='1';
 							
-							
-							$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
-							VALUES ('', '$hoonname', '$timeframe')";
+							$sql = "INSERT INTO hoon_check (id, hoonname, timeframe, room)
+							VALUES ('', '$hoonname', '$timeframe','$room')";
 							
 							if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
@@ -182,7 +188,7 @@ if (!is_null($events['events'])) {
 		else
 		{
 							$url = 'https://api.line.me/v2/bot/message/reply';
-							//$replyToken = $event['replyToken'];
+							$replyToken = $event['replyToken'];
 							$messages11 = ['type' => 'text','text' => $event['source']['groupId']];
 							$data = [
 								'replyToken' => $replyToken,
