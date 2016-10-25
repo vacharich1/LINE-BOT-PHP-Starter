@@ -16,6 +16,8 @@ $text = $content->text;
 $from = $content->from;
 $message_id = $content->id;
 $content_type = $content->contentType;
+
+echo "start1";
  
 // ユーザ情報取得
 api_get_user_profile_request($from);
