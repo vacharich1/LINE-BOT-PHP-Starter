@@ -140,7 +140,7 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $event['message']['text']];
+						$messages = ['type' => 'text','text' => $event['source']['userId']];
 						//sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
