@@ -11,53 +11,14 @@ echo $content;
 $events = json_decode($content, true);
 echo "start2";
 
-$json_content = file_get_contents('php://input');
-$json = json_decode($json_content, true);
-
-echo $json;
-
-$meta="";
-
-// 可以一次送來多筆資料，所以是陣列
-foreach ($json['result'] as $result) {
-    $contentaaa = $result['content'];
-    if ($result['eventType'] == '138311609000106303') {
-        echo '接收訊息 from ' . $contentaaa['from'] . ' to ' . implode(',', $contentaaa['to'])
-           . ' at ' . date('Y-m-d H:i:s', substr($contentaaa['createdTime'], 0, 10));
-        switch ($content['contentType']) {
-            case 1:// 文字
-                echo '文字 = ' . $contentaaa['text'];
-                break;
-            case 7:// 位置
-                echo '文字 = ' . $contentaaa['text'];
-                $location = $contentaaa['location'];
-                echo '名稱 = ' . $location['title'];
-                echo '地址 = ' . $location['address'];
-                echo '緯度 = ' . $location['latitude'];
-                echo '經度 = ' . $location['longitude'];
-                break;
-            case 8:// 貼圖
-                $meta = $contentaaa['contentMetadata'];
-                echo '貼圖包編號 = ' . $meta['STKPKGID'];
-                echo '貼圖編號 = ' . $meta['STKID'];
-                echo '貼圖版本 = ' . $meta['STKVER'];
-            case 10:// 好友資料
-                $meta = $contentaaa['contentMetadata'];
-                echo 'user 編號 = ' . $meta['mid'];
-                echo '姓名 = ' . $meta['displayName'];
-                break;
-        }
-    }
-}
-
-
-
-
-
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
 	foreach ($events['events'] as $event) {
+		$contentaaa = $event['content'];
+		$meta = $contentaaa['contentMetadata'];
+        echo 'user 編號 = ' . $meta['mid'];
+        echo '姓名 = ' . $meta['displayName'];
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
@@ -133,7 +94,7 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $text];
+						$messages = ['type' => 'text','text' => $meta['displayName']];
 						//sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
