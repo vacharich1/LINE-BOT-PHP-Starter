@@ -68,8 +68,7 @@ if (!is_null($events['events'])) {
 	//2:jay
 	//3:member_line_bot
 	foreach ($events['events'] as $event) {
-		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' or $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' 
-		or $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5')
+		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5')
 		{
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
