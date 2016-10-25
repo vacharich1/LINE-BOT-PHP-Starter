@@ -193,7 +193,7 @@ if (!is_null($events['events'])) {
 							$messages11 = ['type' => 'text','text' => "รบกวติดต่อ LINE : @JFOURTWINS ครับ ไลน์บอทสามารถใช้ได้เฉพาะห้องที่กำหนดเท่านั้น"];
 							$data = [
 								'replyToken' => $replyToken,
-								'messages' => [$messages4,$messages5]
+								'messages' => [$messages11]
 							];
 							$post = json_encode($data);
 							$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
