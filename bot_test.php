@@ -190,7 +190,7 @@ if (!is_null($events['events'])) {
 		{
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$replyToken = $event['replyToken'];
-							$messages11 = ['type' => 'text','text' => 'รบกวนติดต่อ LINE : @JFOURTWINS เนื่องจากห้องจะสามารถส่งได้ตามที่กำหนดไว้เท่านั้นครับ ขอบคุณครับ'];
+							$messages11 = ['type' => 'text','text' => 'รบกวนติดต่อ LINE : @JFOURTWINS เนื่องจากไลน์บอทจะสามารถส่งได้ตามที่กำหนดไว้เท่านั้นครับ ขอบคุณครับ'];
 							$data = [
 								'replyToken' => $replyToken,
 								'messages' => [$messages11]
