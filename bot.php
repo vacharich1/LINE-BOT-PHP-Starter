@@ -138,7 +138,7 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $text];
+						$messages = ['type' => 'text','text' => $con['displayName']];
 						sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
@@ -153,7 +153,7 @@ if (!is_null($events['events'])) {
 						$url = 'https://api.line.me/v2/bot/message/reply';
 						$data = [
 							'replyToken' => $replyToken,
-							'messages' => [$messages3,$messages1]
+							'messages' => [$messages,$messages1]
 						];
 						$post = json_encode($data);
 						$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
