@@ -56,11 +56,6 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 
-
-
-
-
-
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
@@ -74,8 +69,6 @@ if (!is_null($events['events'])) {
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 				// Get text sent
 				$text = $event['message']['text'];
-				
-				
 				
 				$textcut = explode(" ", $text);
 				$result = count($textcut);
@@ -190,7 +183,7 @@ if (!is_null($events['events'])) {
 		{
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$replyToken = $event['replyToken'];
-							$messages11 = ['type' => 'text','text' => 'รบกวนติดต่อ LINE : @JFOURTWINS เนื่องจากไลน์บอทจะสามารถส่งได้ตามที่กำหนดไว้เท่านั้นครับ ขอบคุณครับ'];
+							$messages11 = ['type' => 'text','text' => $event['source']['groupId']];
 							$data = [
 								'replyToken' => $replyToken,
 								'messages' => [$messages11]
