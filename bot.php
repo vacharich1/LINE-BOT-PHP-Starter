@@ -88,6 +88,8 @@ function curlUserProfileFromLine($mid) {
     return false;
 }
 
+$profile="";
+
 // 可以一次送來多筆資料，所以是陣列
 foreach ($json['result'] as $result) {
     $content = $result['content'];
@@ -178,7 +180,7 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $con['displayName']];
+						$messages = ['type' => 'text','text' => $profile['displayName']];
 						sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
