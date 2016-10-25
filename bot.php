@@ -58,8 +58,6 @@ $events = json_decode($content, true);
 
 
 
-$json = json_decode($content, true);
-
 
 function curlUserProfileFromLine($mid) {
     $url = 'https://trialbot-api.line.me/v1/profiles?mids=' . $mid;
@@ -71,14 +69,14 @@ function curlUserProfileFromLine($mid) {
         'X-Line-Trusted-User-With-ACL: ' . LineConfig::getMID(),
     ));
 
-    $json_content = curl_exec($ch);
+    $content = curl_exec($ch);
     curl_close($ch);
 
-    if (!$json_content) {
+    if (!$content) {
         return false;
     }
 
-    $json = json_decode($json_content, true);
+    $json = json_decode($content, true);
     foreach ($json['contacts'] as $user) {
         if ($mid == $user['mid']) {
             return $user;
