@@ -12,31 +12,33 @@ $events = json_decode($content, true);
 $json_content = file_get_contents('php://input');
 $json = json_decode($json_content, true);
 
+$meta="";
+
 // 可以一次送來多筆資料，所以是陣列
 foreach ($json['result'] as $result) {
-    $content = $result['content'];
+    $contentaaa = $result['content'];
     if ($result['eventType'] == '138311609000106303') {
-        echo '接收訊息 from ' . $content['from'] . ' to ' . implode(',', $content['to'])
-           . ' at ' . date('Y-m-d H:i:s', substr($content['createdTime'], 0, 10));
+        echo '接收訊息 from ' . $contentaaa['from'] . ' to ' . implode(',', $contentaaa['to'])
+           . ' at ' . date('Y-m-d H:i:s', substr($contentaaa['createdTime'], 0, 10));
         switch ($content['contentType']) {
             case 1:// 文字
-                echo '文字 = ' . $content['text'];
+                echo '文字 = ' . $contentaaa['text'];
                 break;
             case 7:// 位置
-                echo '文字 = ' . $content['text'];
-                $location = $content['location'];
+                echo '文字 = ' . $contentaaa['text'];
+                $location = $contentaaa['location'];
                 echo '名稱 = ' . $location['title'];
                 echo '地址 = ' . $location['address'];
                 echo '緯度 = ' . $location['latitude'];
                 echo '經度 = ' . $location['longitude'];
                 break;
             case 8:// 貼圖
-                $meta = $content['contentMetadata'];
+                $meta = $contentaaa['contentMetadata'];
                 echo '貼圖包編號 = ' . $meta['STKPKGID'];
                 echo '貼圖編號 = ' . $meta['STKID'];
                 echo '貼圖版本 = ' . $meta['STKVER'];
             case 10:// 好友資料
-                $meta = $content['contentMetadata'];
+                $meta = $contentaaa['contentMetadata'];
                 echo 'user 編號 = ' . $meta['mid'];
                 echo '姓名 = ' . $meta['displayName'];
                 break;
@@ -127,7 +129,7 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $text];
+						$messages = ['type' => 'text','text' => $meta['displayName']];
 						sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
