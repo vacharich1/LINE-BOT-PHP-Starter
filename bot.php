@@ -108,9 +108,16 @@ if (!is_null($events['events'])) {
 							#echo "work code";
 						// Get replyToken
 						$replyToken = $event['replyToken'];
-						
-						$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/$hoonname.png";
-						
+						if($hoonname=="aot" or $hoonname=="AOT")
+							$llll = "https://www.dropbox.com/s/x2e2fx37guzaq3x/aot.png";
+						else if($hoonname=="tpch" or $hoonname=="TPCH")
+							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
+						else if($hoonname=="aav" or $hoonname=="AAV")
+							$llll = "https://www.dropbox.com/s/xx3m4erqo5bbjwm/aav.png";
+						else if($hoonname=="ptt" or $hoonname=="PTT")
+							$llll = "https://www.dropbox.com/s/qq3linskfg4pz5z/ptt.png";
+						else
+							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
 						$messages = ['type' => 'text','text' => $text];
 						sleep(5);
