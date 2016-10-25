@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 								$timeframe ="d";
 							#echo $hoonname;
 							$room='1';
-							if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
+							if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')
 								$room='2';
 							else if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5')
 								$room='1';
