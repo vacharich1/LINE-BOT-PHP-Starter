@@ -59,44 +59,6 @@ $events = json_decode($content, true);
 
 
 
-function curlUserProfileFromLine($mid) {
-    $url = 'https://trialbot-api.line.me/v1/profiles?mids=' . $mid;
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'X-Line-ChannelID: ' . LineConfig::getChannelId(),
-        'X-Line-ChannelSecret: ' . LineConfig::getChannelSecret(),
-        'X-Line-Trusted-User-With-ACL: ' . LineConfig::getMID(),
-    ));
-
-    $content = curl_exec($ch);
-    curl_close($ch);
-
-    if (!$content) {
-        return false;
-    }
-
-    $json = json_decode($content, true);
-    foreach ($json['contacts'] as $user) {
-        if ($mid == $user['mid']) {
-            return $user;
-        }
-    }
-
-    return false;
-}
-
-$profile="";
-
-// 可以一次送來多筆資料，所以是陣列
-foreach ($json['result'] as $result) {
-    $content = $result['content'];
-	$mid = $content['params'][0];
-    $profile = curlUserProfileFromLine($mid);
-    echo 'name = ' . $profile['displayName'];
-    echo '<img src="' . $profile['pictureUrl'] . '" />';
-    
-}
 
 
 // Validate parsed JSON data
@@ -178,7 +140,7 @@ if (!is_null($events['events'])) {
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
-						$messages = ['type' => 'text','text' => $profile['displayName']];
+						$messages = ['type' => 'text','text' => $text];
 						sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
