@@ -142,6 +142,8 @@ if (!is_null($events['events'])) {
 						// Build message to reply back
 						#$messages = ['type' => 'text','text' => $event['source']['roomid']];
 						$messages4 = ['type' => 'text','text' => $event['source']['type']];
+						
+						$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
 						//sleep(5);
 						$messages3 = ['type' => 'text','text' => $hoonname];
 			
