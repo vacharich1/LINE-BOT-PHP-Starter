@@ -14,6 +14,8 @@ echo "start2";
 $json_content = file_get_contents('php://input');
 $json = json_decode($json_content, true);
 
+echo $json;
+
 $meta="";
 
 // 可以一次送來多筆資料，所以是陣列
