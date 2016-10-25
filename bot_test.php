@@ -17,6 +17,8 @@ $from = $content->from;
 $message_id = $content->id;
 $content_type = $content->contentType;
 
+echo $json_string;
+
 echo "start1";
  
 // ユーザ情報取得
