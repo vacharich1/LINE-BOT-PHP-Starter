@@ -59,14 +59,14 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 // Loop through each event
-	//1: printer
-	//2:jay black graph
-	//3:member_line_bot
+	//1: printer Cd3afd7bd7719ceb0822ea162b50000fb
+	//2:jay black graph C26d889d89b336a786c06358c1e2df27c
+	//3:member_line_bot C7ab92191511e47ff839c174e7f2104c5
 	//4:bot 3g 3r C941fb2b8a40f9d0f400969fa848c3386
-	//5:jay 1 graph
-	//6: jay free graph
+	//5:jay 1 graph C9f2b93574be7434e6e7180a7d7503601
+	//6: jay free graph C209fd17b6508ec4786c16e775638e4ae
 	foreach ($events['events'] as $event) {
-		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
+		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'C209fd17b6508ec4786c16e775638e4ae')
 		{
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -183,7 +183,7 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-							$replyToken = $event['replyToken'];
+							//$replyToken = $event['replyToken'];
 							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
