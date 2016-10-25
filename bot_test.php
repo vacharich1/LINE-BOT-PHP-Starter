@@ -182,7 +182,7 @@ if (!is_null($events['events'])) {
 		else
 		{
 							$url = 'https://api.line.me/v2/bot/message/reply';
-							$replyToken = $event['replyToken'];
+							//$replyToken = $event['replyToken'];
 							$messages11 = ['type' => 'text','text' => $event['source']['groupId']];
 							$data = [
 								'replyToken' => $replyToken,
