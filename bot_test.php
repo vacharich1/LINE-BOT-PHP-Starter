@@ -133,10 +133,32 @@ if (!is_null($events['events'])) {
 								$llll = "https://www.dropbox.com/s/ah601q4qkt8jff5/ABICO.png?dl";
 							else if($hoonname1 == 'ABPIF')
 								$llll = "https://www.dropbox.com/s/kg7d273yqlq9hu8/ABPIF.png?dl=0";
-							else if($hoonname1 == 'AAV')
-								$llll = "https://www.dropbox.com/s/6s4myka0qpqfy64/AAV.png?dl=0";
-							else if($hoonname1 == 'TPCH')
-								$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
+							else if($hoonname1 == 'ACAP')
+								$llll = "https://www.dropbox.com/s/kqr3ql5l78i4p97/ACAP.png?dl=0";
+							else if($hoonname1 == 'ACC')
+								$llll = "https://www.dropbox.com/s/1jotfxmvuet060a/ACC.png?dl=0";
+							else if($hoonname1 == 'ADAM')
+								$llll = "https://www.dropbox.com/s/wouqqrur2qj38zl/ADAM.png?dl=0";
+							else if($hoonname1 == 'ADVANC')
+								$llll = "https://www.dropbox.com/s/vh1lm8jso745f1c/ADVANC.png?dl=0";
+							else if($hoonname1 == 'AEC')
+								$llll = "https://www.dropbox.com/s/qd42g7bh9nsq0hj/AEC.png?dl=0";
+							else if($hoonname1 == 'AEONTS')
+								$llll = "https://www.dropbox.com/s/h8ilucjp5sgty83/AEONTS.png?dl=0";
+							else if($hoonname1 == 'AF')
+								$llll = "https://www.dropbox.com/s/j1ojyl479h2mk8s/AF.png?dl=0";
+							else if($hoonname1 == 'AFC')
+								$llll = "https://www.dropbox.com/s/72xjs41w5i3r149/AFC.png?dl=0";
+							else if($hoonname1 == 'AGE')
+								$llll = "https://www.dropbox.com/s/rx2w3jx4ls0biqt/AGE.png?dl=0";
+							else if($hoonname1 == 'AH')///////////////
+								$llll = "https://www.dropbox.com/s/q06nlwgtgq2kh0u/AH.png?dl=0";
+							else if($hoonname1 == 'AHC')
+								$llll = "https://www.dropbox.com/s/qoa982nf7mb1jcu/AHC.png?dl=0";
+							else if($hoonname1 == 'AI')
+								$llll = "https://www.dropbox.com/s/xmg9hy3ocygsu7n/AI.png?dl=0";
+							else if($hoonname1 == 'AIE')
+								$llll = "https://www.dropbox.com/s/7ngwuy8m4vnq8il/AIE.png?dl=0";
 							else
 								$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 							// Build message to reply back
