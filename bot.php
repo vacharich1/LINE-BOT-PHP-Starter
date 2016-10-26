@@ -115,7 +115,7 @@ if (!is_null($events['events'])) {
 						// Get replyToken
 						$replyToken = $event['replyToken'];
 						if($hoonname_big == "2S")
-							$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png?dl=0";
+							$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";
 						else if($hoonname_big == "TPCH")
 							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
 						else
