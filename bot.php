@@ -116,9 +116,14 @@ if (!is_null($events['events'])) {
 						$replyToken = $event['replyToken'];
 						
 						$hoonname1 = strtoupper($hoonname);
-						if($hoonname1[0]=="2")
-							if($hoonname1[1] == "S")
-								$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";
+						if($hoonname1 == "2S")
+							$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";
+						else if($hoonname1 == "A")
+							$llll = "https://www.dropbox.com/s/u6vltz9l2mmtjgr/A.png?dl=0";
+						else if($hoonname1 == "COM7")
+							$llll = "https://www.dropbox.com/s/uy5kmbt35jutf2k/AA_COM.png?dl=0";
+						else if($hoonname1 == "AAV")
+							$llll = "https://www.dropbox.com/s/6s4myka0qpqfy64/AAV.png?dl=0";
 						else if($hoonname1 == "TPCH")
 							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
 						else
