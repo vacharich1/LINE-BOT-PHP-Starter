@@ -84,7 +84,7 @@ if (!is_null($events['events'])) {
 		
 						//echo $count_text_cut;
 						$hoonname = substr($textcut[0], 1); // cut@
-						$hoonname_big = strtoupper($hoonname);
+						
 						if($result == 2)
 							$timeframe = $textcut[1];
 						else
@@ -114,9 +114,11 @@ if (!is_null($events['events'])) {
 							#echo "work code";
 						// Get replyToken
 						$replyToken = $event['replyToken'];
-						if($hoonname_big == "2S")
+						
+						$hoonname1 = strtoupper($hoonname);
+						if($hoonname1 == "2S")
 							$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";
-						else if($hoonname_big == "TPCH")
+						else if($hoonname1 == "TPCH")
 							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
