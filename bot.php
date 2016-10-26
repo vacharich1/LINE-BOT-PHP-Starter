@@ -116,21 +116,21 @@ if (!is_null($events['events'])) {
 						$replyToken = $event['replyToken'];
 						
 						$hoonname1 = strtoupper($hoonname);
-						if($hoonname1 == '2S')
+						if($hoonname == '2S')
 							$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png";
-						else if($hoonname1 == 'A')
+						else if($hoonname == 'A')
 							$llll = "https://www.dropbox.com/s/u6vltz9l2mmtjgr/A.png?dl";
-						else if($hoonname1 == 'COM7')
+						else if($hoonname == 'COM7')
 							$llll = "https://www.dropbox.com/s/uy5kmbt35jutf2k/AA_COM.png?dl";
-						else if($hoonname1 == 'ABC')
+						else if($hoonname == 'ABC')
 							$llll = "https://www.dropbox.com/s/xbwsfy70kcqzak1/ABC.png?dl=0";
-						else if($hoonname1 == 'abico' || $hoonname1 == 'ABICO')
+						else if($hoonname == 'abico' || $hoonname == 'ABICO')
 							$llll = "https://www.dropbox.com/s/ah601q4qkt8jff5/ABICO.png?dl";
-						else if($hoonname1 == 'ABPIF')
+						else if($hoonname == 'ABPIF')
 							$llll = "https://www.dropbox.com/s/kg7d273yqlq9hu8/ABPIF.png?dl=0";
-						else if($hoonname1 == 'AAV')
+						else if($hoonname == 'AAV')
 							$llll = "https://www.dropbox.com/s/6s4myka0qpqfy64/AAV.png?dl=0";
-						else if($hoonname1 == 'TPCH')
+						else if($hoonname == 'TPCH')
 							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
