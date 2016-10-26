@@ -122,6 +122,12 @@ if (!is_null($events['events'])) {
 							$llll = "https://www.dropbox.com/s/u6vltz9l2mmtjgr/A.png?dl=0";
 						else if($hoonname1 == "COM7")
 							$llll = "https://www.dropbox.com/s/uy5kmbt35jutf2k/AA_COM.png?dl=0";
+						else if($hoonname1 == "ABC")
+							$llll = "https://www.dropbox.com/s/xbwsfy70kcqzak1/ABC.png?dl=0";
+						else if($hoonname1 == "ABICO")
+							$llll = "https://www.dropbox.com/s/ah601q4qkt8jff5/ABICO.png?dl=0";
+						else if($hoonname1 == "ABPIF")
+							$llll = "https://www.dropbox.com/s/kg7d273yqlq9hu8/ABPIF.png?dl=0";
 						else if($hoonname1 == "AAV")
 							$llll = "https://www.dropbox.com/s/6s4myka0qpqfy64/AAV.png?dl=0";
 						else if($hoonname1 == "TPCH")
