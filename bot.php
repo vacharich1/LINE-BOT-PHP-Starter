@@ -84,6 +84,7 @@ if (!is_null($events['events'])) {
 		
 						//echo $count_text_cut;
 						$hoonname = substr($textcut[0], 1); // cut@
+						$hoonname_big = strtoupper($hoonname);
 						if($result == 2)
 							$timeframe = $textcut[1];
 						else
@@ -113,30 +114,10 @@ if (!is_null($events['events'])) {
 							#echo "work code";
 						// Get replyToken
 						$replyToken = $event['replyToken'];
-						if($hoonname=="aot" or $hoonname=="AOT")
-							$llll = "https://www.dropbox.com/s/x2e2fx37guzaq3x/aot.png";
-						else if($hoonname == "tpch" or $hoonname == "TPCH")
+						if($hoonname_big == "2S")
+							$llll = "https://www.dropbox.com/s/cov1jrkmhe8q81n/2S.png?dl=0";
+						else if($hoonname_big == "TPCH")
 							$llll = "https://www.dropbox.com/s/kde06zagtb302ec/tpch.png";
-						else if($hoonname=="aav" or $hoonname=="AAV")
-							$llll = "https://www.dropbox.com/s/xx3m4erqo5bbjwm/aav.png";
-						else if($hoonname=="ptt" or $hoonname=="PTT")
-							$llll = "https://www.dropbox.com/s/qq3linskfg4pz5z/ptt.png";
-						else if($hoonname=="scc" or $hoonname=="SCC")
-							$llll = "https://www.dropbox.com/s/3ldbg8vyhjnl0cq/scc.png";
-						else if($hoonname=="ck" or $hoonname=="CK")
-							$llll = "https://www.dropbox.com/s/m93490z5z6lewg0/ck.png";
-						else if($hoonname=="dtac" or $hoonname=="DTAC")
-							$llll = "https://www.dropbox.com/s/rwiyh1djuhlepia/dtac.png";
-						else if($hoonname=="itd" or $hoonname=="ITD")
-							$llll = "https://www.dropbox.com/s/3dxufqovt6uaxrb/itd.png";
-						else if($hoonname=="scb" or $hoonname=="SCB")
-							$llll = "https://www.dropbox.com/s/hyfmb2n26amlsrx/scb.png";
-						else if($hoonname=="kbank" or $hoonname=="KABNK")
-							$llll = "https://www.dropbox.com/s/fy82hqmdvmfvvv9/kbank.png";
-						else if($hoonname=="thai" or $hoonname=="THAI")
-							$llll = "https://www.dropbox.com/s/5i185iegk3755tp/thai.png";
-						else if($hoonname=="true" or $hoonname=="TRUE")
-							$llll = "https://www.dropbox.com/s/j2rtcfffybha6bn/true.png";
 						else
 							$llll = "https://www.dropbox.com/s/h6yztz70os1ily8/pic.png";
 						// Build message to reply back
