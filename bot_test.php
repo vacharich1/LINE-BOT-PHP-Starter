@@ -93,7 +93,7 @@ if (!is_null($events['events'])) {
 							$room='1';
 							if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 								$room='2';
-							else if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5')//graph 1
+							else if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5'|| $event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90')//graph 1
 								$room='1';
 							else
 								$room='3';
@@ -307,10 +307,6 @@ if (!is_null($events['events'])) {
 								$llll = "https://www.dropbox.com/s/rlwxvpmvhn2ghkz/BUI.png?dl=0";
 							else if($hoonname1 == 'BWG')
 								$llll = "https://www.dropbox.com/s/hq5bic6qhi3bcku/BWG.png?dl=0";
-							
-							
-							
-							
 							else if($hoonname1 == 'CBG')
 								$llll = "https://www.dropbox.com/s/27rocarn3wix4yc/CBG.png?dl=0";
 							else if($hoonname1 == 'CCET')
