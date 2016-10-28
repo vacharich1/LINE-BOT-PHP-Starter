@@ -1508,7 +1508,9 @@ if (!is_null($events['events'])) {
 							else if($hoonname1 == 'YNP')
 							     $llll = 'https://www.dropbox.com/s/1x0rc9chtimvowy/YNP.png?dl=0';
 							else if($hoonname1 == 'YUASA')
-							     $llll = 'https://www.dropbox.com/s/ckprv62uy6bdox8/YUASA.png?dl=0';																																								
+							     $llll = 'https://www.dropbox.com/s/ckprv62uy6bdox8/YUASA.png?dl=0';
+							else if($hoonname1 == 'S50Z16')
+							     $llll = 'https://www.dropbox.com/s/zmsr7jvsc8g3cah/s50z16.png?dl=0';																																								
 							else
 								$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
 							// Build message to reply back
