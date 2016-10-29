@@ -1582,7 +1582,7 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-							if($text=='addgroupbyjay')
+							if(strcmp($text,'##addgroupbyjay')==0)
 							{
 								$replyToken = $event['replyToken'];
 								$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
