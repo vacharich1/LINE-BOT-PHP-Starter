@@ -1553,7 +1553,8 @@ if (!is_null($events['events'])) {
 						}
 						else
 						{
-							//if(preg_match("/^[a-zA-Z]+$/", $text[0]) == 1) {
+							if(preg_match("/^[a-zA-Z]+$/", $text[0]) == 1) {
+								$replyToken = $event['replyToken'];
 								$messages55 = ['type' => 'text','text' => "ลืม @ นะจ๊ะ ----> @hoonname timeframe = @aot 60"];
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
@@ -1572,7 +1573,7 @@ if (!is_null($events['events'])) {
 								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 								$result = curl_exec($ch);
 								curl_close($ch);
-							//}
+							}
 						}
 				
 					}//ifresult<2
