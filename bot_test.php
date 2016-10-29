@@ -1,6 +1,6 @@
 ﻿<?php
 echo "aaaaa";
-$host= "sql6.freemysqlhosting.net";
+    $host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
 	$CHAR_SET = "charset=utf8"; 
  
@@ -114,7 +114,7 @@ if (!is_null($events['events'])) {
 							sleep(0.3);
 							$check ="check1";
 							#echo "work code";
-							$sql = "INSERT INTO `check_capture`(`id`, `check`) VALUES ('','$check')";
+							$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
 							if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
 							} 
