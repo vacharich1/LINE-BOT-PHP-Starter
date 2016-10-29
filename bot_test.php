@@ -1581,7 +1581,7 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-							if($text == "##add group id line by jay")
+							if($text == '##addgroupbyjay')
 							{
 								$replyToken = $event['replyToken'];
 								$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
