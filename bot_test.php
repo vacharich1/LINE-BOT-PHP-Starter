@@ -68,6 +68,7 @@ if (!is_null($events['events'])) {
 	//7: ideatrade bot 1 Cb880ba168d17c69174b652045a8f8b90
 	//8: ideatrade bot 2 
 	$text = $event['message']['text'];
+	$textcut_check = explode(" ", $text);
 	foreach ($events['events'] as $event) {
 		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'C209fd17b6508ec4786c16e775638e4ae' || $event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90')
 		{
@@ -1582,7 +1583,7 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-							if(strcmp($text,'##addgroupbyjay')==0)
+							if(strcmp($textcut_check[0],'##addgroupbyjay')==0)
 							{
 								$replyToken = $event['replyToken'];
 								$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
