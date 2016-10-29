@@ -1,11 +1,28 @@
 ﻿<?php
 echo "aaaaa";
-    $host= "sql6.freemysqlhosting.net";
+    /*$host= "sql6.freemysqlhosting.net";
 	$db = "sql6141179";
 	$CHAR_SET = "charset=utf8"; 
  
 	$username = "sql6141179";    
 	$password = "2VSm3JEfdX";   
+	
+
+	$link = mysqli_connect($host, $username, $password, $db);
+	if (!$link) {
+    		die('Could not connect: ' . mysqli_connect_errno());
+	}
+	else
+	{
+		echo "connect";
+	}
+	*/
+	$host= "127.0.0.1:3306";
+	$db = "botbotbot";
+	$CHAR_SET = "charset=utf8"; 
+ 
+	$username = "botbotbot";    
+	$password = "botbotbot";   
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
