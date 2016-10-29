@@ -1,11 +1,11 @@
 ﻿<?php
 echo "aaaaa";
-    /*$host= "sql6.freemysqlhosting.net";
-	$db = "sql6141179";
+    $host= "sql6.freemysqlhosting.net";
+	$db = "sql6142161";
 	$CHAR_SET = "charset=utf8"; 
  
-	$username = "sql6141179";    
-	$password = "2VSm3JEfdX";   
+	$username = "sql6142161";    
+	$password = "rcAhqhzFJQ";   
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
@@ -16,23 +16,8 @@ echo "aaaaa";
 	{
 		echo "connect";
 	}
-	*/
-	$host= "127.0.0.1:3306";
-	$db = "botbotbot";
-	$CHAR_SET = "charset=utf8"; 
- 
-	$username = "botbotbot";    
-	$password = "botbotbot";   
 	
-
-	$link = mysqli_connect($host, $username, $password, $db);
-	if (!$link) {
-    		die('Could not connect: ' . mysqli_connect_errno());
-	}
-	else
-	{
-		echo "connect";
-	}
+	
  
 	/*try {
 		
@@ -131,7 +116,7 @@ if (!is_null($events['events'])) {
 							sleep(0.3);
 							$check ="check1";
 							#echo "work code";
-							$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
+							$sql = "INSERT INTO `check_capture`(`id`, `check`) VALUES ('','$check')";
 							if (mysqli_query($link, $sql)) {
 									echo "New record created successfully";
 							} 
