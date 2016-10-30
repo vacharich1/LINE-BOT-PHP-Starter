@@ -1,5 +1,5 @@
 ﻿<?php
-    $host= "http://27.254.82.170:81/phpmyadmin/index.php?old_usr=ideatrad_bot";
+        $host= "http://www.ideatradebot.com/phpmyadmin";
 	$db = "ideatrad_bot";
  
 	$username = "ideatrad_bot";    
