@@ -1530,15 +1530,15 @@ if (!is_null($events['events'])) {
 							$messages1 = ['type' => 'text','text' => $llll];
 							
 							$messages2 = ['type' => 'image',
-									 'originalContentUrl' => 'https://www.dropbox.com/s/ckprv62uy6bdox8/YUASA.png',
-									 'previewImageUrl' => 'https://www.dropbox.com/s/ckprv62uy6bdox8/YUASA.png'
+									 'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
+									 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
 							];
 				
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
 								'replyToken' => $replyToken,
-								'messages' => [$messages3,$messages1]
+								'messages' => [$messages2,$messages1]
 							];
 							$post = json_encode($data);
 							$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
