@@ -60,6 +60,32 @@ $events = json_decode($content, true);
 
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
+	
+	$text = $event['message']['text'];
+	$textcut_check = explode(" ", $text);
+	
+	if($textcut_check[0] == "@@addgroupbyjay")
+	{
+			$replyToken = $event['replyToken'];
+			$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
+			// Make a POST Request to Messaging API to reply to sender
+			$url = 'https://api.line.me/v2/bot/message/reply';
+			$data = [
+						'replyToken' => $replyToken,
+						'messages' => [$messages55]
+					];
+			$post = json_encode($data);
+			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+					
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+	}
 // Loop through each event
 	//1: printer Cd3afd7bd7719ceb0822ea162b50000fb
 	//2:jay black graph C26d889d89b336a786c06358c1e2df27c
@@ -69,8 +95,7 @@ if (!is_null($events['events'])) {
 	//6: jay free graph C209fd17b6508ec4786c16e775638e4ae
 	//7: ideatrade bot 1 Cb880ba168d17c69174b652045a8f8b90
 	//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
-	$text = $event['message']['text'];
-	$textcut_check = explode(" ", $text);
+	
 	foreach ($events['events'] as $event) {
 		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'C209fd17b6508ec4786c16e775638e4ae' || $event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90' || $event['source']['groupId'] == 'C1970832b0d5e677dc1498442f8412be7')
 		{
@@ -1533,6 +1558,13 @@ if (!is_null($events['events'])) {
 									 'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
 									 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
 							];
+							
+							
+							$messages7 = ['type' => 'imagemap',
+									 'baseUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
+									 'altText' => 'this is an imagemap',
+									 'baseSize' => 'this is an imagemap'
+							];
 				
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
@@ -1585,28 +1617,7 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-							if($textcut_check[0] == "addgroupbyjay")
-							{
-								$replyToken = $event['replyToken'];
-								$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
-								// Make a POST Request to Messaging API to reply to sender
-								$url = 'https://api.line.me/v2/bot/message/reply';
-								$data = [
-									'replyToken' => $replyToken,
-									'messages' => [$messages55]
-								];
-								$post = json_encode($data);
-								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-					
-								$ch = curl_init($url);
-								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-								$result = curl_exec($ch);
-								curl_close($ch);
-							}
+							
 		}
 	}//for
 }
