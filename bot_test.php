@@ -1597,7 +1597,7 @@ if (!is_null($events['events'])) {
 				foreach ($events['events'] as $event) {
 					$text = $event['message']['text'];
 			
-					if($text == '@@addgroupbyjay')
+					if($text == '@@addgroupbyjay_botroom')
 					{
 							$replyToken = $event['replyToken'];
 							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
