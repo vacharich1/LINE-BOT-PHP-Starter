@@ -64,7 +64,7 @@ if (!is_null($events['events'])) {
 	$text = $event['message']['text'];
 	$textcut_check = explode(" ", $text);
 	
-	if($textcut_check[0] == "@@addgroupbyjay")
+	if($text == "@@addgroupbyjay")
 	{
 			$replyToken = $event['replyToken'];
 			$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
