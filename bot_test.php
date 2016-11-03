@@ -1594,12 +1594,13 @@ if (!is_null($events['events'])) {
 		else
 		{
 				
-					$text = $event['events']['message']['text'];
+				foreach ($events['events'] as $event) {
+					$text = $event['message']['text'];
 			
 					if($text == '@@addgroupbyjay')
 					{
-							$replyToken = $event['events']['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['events']['source']['groupId']];
+							$replyToken = $event['replyToken'];
+							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
@@ -1617,7 +1618,8 @@ if (!is_null($events['events'])) {
 							curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 							$result = curl_exec($ch);
 							curl_close($ch);
-					}	
+					}
+				}
 				
 		}
 	}//for
