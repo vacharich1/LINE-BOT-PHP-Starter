@@ -1596,10 +1596,10 @@ if (!is_null($events['events'])) {
 				
 					$text = $event['events']['message']['text'];
 			
-					if($text == "@@addgroupbyjay")
+					if($text == '@@addgroupbyjay')
 					{
-							$replyToken = $event['replyToken'];
-							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
+							$replyToken = $event['events']['replyToken'];
+							$messages55 = ['type' => 'text','text' => $event['events']['source']['groupId']];
 							// Make a POST Request to Messaging API to reply to sender
 							$url = 'https://api.line.me/v2/bot/message/reply';
 							$data = [
