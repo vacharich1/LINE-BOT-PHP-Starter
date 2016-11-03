@@ -1593,10 +1593,10 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-				foreach ($events['events'] as $event) {
-					$text = $event['message']['text'];
+				#foreach ($events['events'] as $event) {
+					#$text = $event['message']['text'];
 			
-					if($text == "@@addgroupbyjay")
+					#if($text == "@@addgroupbyjay")
 					{
 							$replyToken = $event['replyToken'];
 							$messages55 = ['type' => 'text','text' => $event['source']['groupId']];
