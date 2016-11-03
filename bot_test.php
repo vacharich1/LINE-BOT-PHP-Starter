@@ -61,8 +61,7 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['events'])) {
 	
-	$text = $event['message']['text'];
-	$textcut_check = explode(" ", $text);
+	$text = $event['events']['message']['text'];
 	
 	if($text == "@@addgroupbyjay")
 	{
