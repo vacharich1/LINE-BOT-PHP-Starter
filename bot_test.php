@@ -94,7 +94,7 @@ if (!is_null($events['events'])) {
 							if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
 							{
 								$replyToken = $event['replyToken'];
-								$messages556 = ['type' => 'text','text' => "Please try again @ aot ----> @aot type with no space"];
+								$messages556 = ['type' => 'text','text' => "รบกวนพิมอีกครั้งจ๊ะ ต้องไม่มีช่องว่าง ในชื่อหุ้น  @ aot ----> @aot type with no space"];
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
 								$data = [
