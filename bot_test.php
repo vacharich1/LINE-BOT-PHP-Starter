@@ -90,7 +90,7 @@ if (!is_null($events['events'])) {
 						$arr1 = str_split($textcut[0]);
 						if($arr1[0] == "@")
 						{
-							if($arr1[1] != " ")
+							if($arr1[1] == " ")
 							{
 								$replyToken = $event['replyToken'];
 								$messages55 = ['type' => 'text','text' => "ต้องไม่มีช่องว่างจ๊ะ รบกวนพิมอีกครั้งครับ @ aot 60  -------> @aot 60"];
