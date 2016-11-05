@@ -90,15 +90,16 @@ if (!is_null($events['events'])) {
 						$arr1 = str_split($textcut[0]);
 						if($arr1[0] == "@")
 						{
-							if(preg_match("/^[a-zA-Z]+$/", $arr1[1]]) != 1)
+							$hoonname = substr($textcut[0], 1); // cut@
+							if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
 							{
 								$replyToken = $event['replyToken'];
-								$messages55 = ['type' => 'text','text' => "ต้องไม่มีช่องว่างจ๊ะ รบกวนพิมอีกครั้งครับ @ aot 60  -------> @aot 60"];
+								$messages556 = ['type' => 'text','text' => "Please try again @ aot ----> @aot type with no space"];
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
 								$data = [
 									'replyToken' => $replyToken,
-									'messages' => [$messages55]
+									'messages' => [$messages556]
 								];
 								$post = json_encode($data);
 								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
@@ -115,7 +116,7 @@ if (!is_null($events['events'])) {
 							else
 							{
 								//echo $count_text_cut;
-								$hoonname = substr($textcut[0], 1); // cut@
+								
 								if($result == 2)
 									$timeframe = $textcut[1];
 								else
