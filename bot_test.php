@@ -90,9 +90,27 @@ if (!is_null($events['events'])) {
 						$arr1 = str_split($textcut[0]);
 						if($arr1[0] == "@")
 						{
-							if($arr1[1] == " ")
+							if(preg_match("/^[a-zA-Z]+$/", $arr1[1]]) != 1)
 							{
-								$hoonname = substr($textcut[0], 2); // cut@
+								$replyToken = $event['replyToken'];
+								$messages55 = ['type' => 'text','text' => "ต้องไม่มีช่องว่างจ๊ะ รบกวนพิมอีกครั้งครับ @ aot 60  -------> @aot 60"];
+								// Make a POST Request to Messaging API to reply to sender
+								$url = 'https://api.line.me/v2/bot/message/reply';
+								$data = [
+									'replyToken' => $replyToken,
+									'messages' => [$messages55]
+								];
+								$post = json_encode($data);
+								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+					
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								$result = curl_exec($ch);
+								curl_close($ch);	
 							}
 							else
 							{
