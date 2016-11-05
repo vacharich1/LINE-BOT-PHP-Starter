@@ -93,7 +93,7 @@ if (!is_null($events['events'])) {
 							if($arr1[1] != " ")
 							{
 								$replyToken = $event['replyToken'];
-								$messages55 = ['type' => 'text','text' => "ต้องไม่มีช่องว่างจ๊ะ รอกวนพิมอีกครั้งครับ @ aot 60  -------> @aot 60"];
+								$messages55 = ['type' => 'text','text' => "ต้องไม่มีช่องว่างจ๊ะ รบกวนพิมอีกครั้งครับ @ aot 60  -------> @aot 60"];
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
 								$data = [
