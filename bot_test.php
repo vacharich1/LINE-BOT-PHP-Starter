@@ -1550,7 +1550,7 @@ if (!is_null($events['events'])) {
 								$messages4 = ['type' => 'text','text' => $event['source']['type']];
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-								sleep(5);
+								sleep(5.5);
 								$messages3 = ['type' => 'text','text' => $hoonname];
 					
 								$messages1 = ['type' => 'text','text' => $llll];
@@ -1558,13 +1558,6 @@ if (!is_null($events['events'])) {
 								$messages2 = ['type' => 'image',
 										 'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
 										 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
-								];
-								
-								
-								$messages7 = ['type' => 'imagemap',
-										 'baseUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
-										 'altText' => 'this is an imagemap',
-										 'baseSize' => 'this is an imagemap'
 								];
 					
 								// Make a POST Request to Messaging API to reply to sender
