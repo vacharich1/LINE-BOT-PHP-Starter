@@ -1559,6 +1559,24 @@ if (!is_null($events['events'])) {
 										 'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
 										 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
 								];
+								
+								
+								$sql1 = "SELECT * FROM hoon_check"
+								
+								$result = mysqli_query($link, $sql1);
+								
+								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+								VALUES ('', '$hoonname', '$timeframe',$room)";
+
+								if (mysqli_num_rows($result) > 0) {
+									// output data of each row
+									while($row = mysqli_fetch_assoc($result)) {
+										$hoonname_check = $row["hoonname"];
+										$timeframe_check = $row["timeframe"];
+									}
+								} else {
+									echo "0 results";
+								}
 					
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
