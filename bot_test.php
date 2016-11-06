@@ -1559,45 +1559,27 @@ if (!is_null($events['events'])) {
 										 'originalContentUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg',
 										 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
 								];
-								
-								
-								
-								
-								$sql="SELECT * FROM hoon_check";
-								
-								if ($result=mysqli_query($link,$sql))
-								{
-								  // Fetch one and one row
-								  while ($row=mysqli_fetch_row($result))
-									{
-										$id_hoon_check=$row[0]
-										$hoonname_check=$row[1]
-										$timeframe_check=$row[2]
-										$room_check=$row[3]
-
-									}
-								}
-								
-										// Make a POST Request to Messaging API to reply to sender
-										$url = 'https://api.line.me/v2/bot/message/reply';
-										$data = [
-											'replyToken' => $replyToken,
-											'messages' => [$messages3,$messages1]
-										];
-										$post = json_encode($data);
-										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-							
-										$ch = curl_init($url);
-										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-										$result = curl_exec($ch);
-										curl_close($ch);
-										#echo "check1";
-										#sleep(10);
-										#echo $result . "\r\n";
+					
+								// Make a POST Request to Messaging API to reply to sender
+								$url = 'https://api.line.me/v2/bot/message/reply';
+								$data = [
+									'replyToken' => $replyToken,
+									'messages' => [$messages3,$messages1]
+								];
+								$post = json_encode($data);
+								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+					
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								$result = curl_exec($ch);
+								curl_close($ch);
+								#echo "check1";
+								#sleep(10);
+								#echo $result . "\r\n";
 							}
 						}
 						else
