@@ -1565,14 +1565,11 @@ if (!is_null($events['events'])) {
 								
 								$result = mysqli_query($link, $sql1);
 								
-								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
-								VALUES ('', '$hoonname', '$timeframe',$room)";
-
 								if (mysqli_num_rows($result) > 0) {
 									// output data of each row
 									while($row = mysqli_fetch_assoc($result)) {
-										$hoonname_check = $row["hoonname"];
-										$timeframe_check = $row["timeframe"];
+										echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+										
 									}
 								} else {
 									echo "0 results";
