@@ -1560,21 +1560,6 @@ if (!is_null($events['events'])) {
 										 'previewImageUrl' => 'http://static.bigstockphoto.com/images/homepage/2016_popular_photo_categories.jpg'
 								];
 								
-								
-								$sql1 = "SELECT * FROM hoon_check"
-								
-								$result = mysqli_query($link, $sql1);
-								
-								if (mysqli_num_rows($result) > 0) {
-									// output data of each row
-									while($row = mysqli_fetch_assoc($result)) {
-										echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-										
-									}
-								} else {
-									echo "0 results";
-								}
-					
 								// Make a POST Request to Messaging API to reply to sender
 								$url = 'https://api.line.me/v2/bot/message/reply';
 								$data = [
