@@ -1570,10 +1570,10 @@ if (!is_null($events['events'])) {
 								  // Fetch one and one row
 								  while ($row=mysqli_fetch_row($result))
 									{
-										$id_hoon_check=row[0]
-										$hoonname_check=row[1]
-										$timeframe_check=row[2]
-										$room_check=row[2]
+										$id_hoon_check=$row[0]
+										$hoonname_check=$row[1]
+										$timeframe_check=$row[2]
+										$room_check=$row[3]
 
 									}
 								  // Free result set
