@@ -1,11 +1,11 @@
 ﻿<?php
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
-	$db = "sql6143162";
+	$db = "sql6143913";
 	$CHAR_SET = "charset=utf8"; 
  
-	$username = "sql6143162";    
-	$password = "APbzH9E7Rb";   
+	$username = "sql6143913";    
+	$password = "a1q6heQkiU";   
 	
 
 	$link = mysqli_connect($host, $username, $password, $db);
