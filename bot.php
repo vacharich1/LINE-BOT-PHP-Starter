@@ -10,7 +10,8 @@ $host= "sql6.freemysqlhosting.net";
 
 	$link = mysqli_connect($host, $username, $password, $db);
 	if (!$link) {
-    		die('Could not connect: ' . mysqli_connect_errno());
+		echo "cannot connect";
+    	//die('Could not connect: ' . mysqli_connect_errno());
 	}
 	else
 	{
