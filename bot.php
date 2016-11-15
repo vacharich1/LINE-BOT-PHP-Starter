@@ -10,8 +10,7 @@ $host= "sql6.freemysqlhosting.net";
 
 	$link = mysqli_connect($host, $username, $password, $db);
 	if (!$link) {
-		echo "cannot connect";
-    	//die('Could not connect: ' . mysqli_connect_errno());
+    	die('Could not connect: ' . mysqli_connect_errno());
 	}
 	else
 	{
@@ -93,7 +92,7 @@ if (!is_null($events['events'])) {
 						#echo $hoonname;
 						
 						//INSERT INTO `sql6144521`.`hoon_check` (`ID`, `hoonname`, `timeframe`, `room`) VALUES ('', 'aot', '30', '1');
-						$sql = "INSERT INTO `sql6144521`.`hoon_check` (id, hoonname, timeframe)
+						$sql = "INSERT INTO `hoon_check` (id, hoonname, timeframe)
 						VALUES ('', '$hoonname', '$timeframe')";
 						
 						if (mysqli_query($link, $sql)) {
@@ -105,7 +104,7 @@ if (!is_null($events['events'])) {
 						sleep(0.3);
 						$check ="check1";
 						#echo "work code";
-						$sql = "INSERT INTO `sql6144521`.`check_capture`(`id`, `check`) VALUES ('','$check')";
+						$sql = "INSERT INTO `check_capture`(`id`, `check`) VALUES ('','$check')";
 						if (mysqli_query($link, $sql)) {
 								echo "New record created successfully";
 						} 
