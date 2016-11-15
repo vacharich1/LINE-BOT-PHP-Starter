@@ -92,8 +92,8 @@ if (!is_null($events['events'])) {
 							$timeframe ="d";
 						#echo $hoonname;
 						
-						
-						$sql = "INSERT INTO hoon_check (id, hoonname, timeframe)
+						//INSERT INTO `sql6144521`.`hoon_check` (`ID`, `hoonname`, `timeframe`, `room`) VALUES ('', 'aot', '30', '1');
+						$sql = "INSERT INTO `sql6144521`.`hoon_check` (id, hoonname, timeframe)
 						VALUES ('', '$hoonname', '$timeframe')";
 						
 						if (mysqli_query($link, $sql)) {
@@ -105,7 +105,7 @@ if (!is_null($events['events'])) {
 						sleep(0.3);
 						$check ="check1";
 						#echo "work code";
-						$sql = "INSERT INTO `check_capture`(`id`, `check`) VALUES ('','$check')";
+						$sql = "INSERT INTO `sql6144521`.`check_capture`(`id`, `check`) VALUES ('','$check')";
 						if (mysqli_query($link, $sql)) {
 								echo "New record created successfully";
 						} 
