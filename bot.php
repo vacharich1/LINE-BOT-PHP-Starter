@@ -1,16 +1,15 @@
 ﻿<?php
 
-$host= "sql6.freemysqlhosting.net";
+	$host= "sql6.freemysqlhosting.net";
 	$db = "sql6144521";
 	$CHAR_SET = "charset=utf8"; 
  
 	$username = "sql6144521";    
 	$password = "IAC4FPTQV2";   
-	
 
 	$link = mysqli_connect($host, $username, $password, $db);
 	if (!$link) {
-    	die('Could not connect: ' . mysqli_connect_errno());
+    		die('Could not connect: ' . mysqli_connect_errno());
 	}
 	else
 	{
