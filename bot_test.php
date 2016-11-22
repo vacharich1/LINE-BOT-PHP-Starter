@@ -130,25 +130,25 @@ if (!is_null($events['events'])) {
 								else
 									$room='3';
 								
-								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
-								VALUES ('', '$hoonname', '$timeframe',$room)";
+								//$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+								//VALUES ('', '$hoonname', '$timeframe',$room)";
 								
-								if (mysqli_query($link, $sql)) {
-										echo "New record created successfully";
-								} 
-								else {
+								//if (mysqli_query($link, $sql)) {
+								//		echo "New record created successfully";
+								//} 
+								//else {
 										#echo "Error: " . $sql . "<br>" . mysqli_error($link);
-								}
-								sleep(0.3);
-								$check ="check1";
+								//}
+								//sleep(0.3);
+								//$check ="check1";
 								#echo "work code";
-								$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
-								if (mysqli_query($link, $sql)) {
-										echo "New record created successfully";
-								} 
-								else {
-										echo "Error: " . $sql . "<br>" . mysqli_error($link);
-								}
+								//$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
+								//if (mysqli_query($link, $sql)) {
+								//		echo "New record created successfully";
+								//} 
+								//else {
+								//		echo "Error: " . $sql . "<br>" . mysqli_error($link);
+								//}
 									#echo "work code";
 								// Get replyToken
 								$replyToken = $event['replyToken'];
@@ -1550,7 +1550,8 @@ if (!is_null($events['events'])) {
 								$messages4 = ['type' => 'text','text' => $event['source']['type']];
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-								sleep(5.5);
+								//sleep(5.5);
+								$llll ='SORRY , OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $hoonname];
 					
 								$messages1 = ['type' => 'text','text' => $llll];
