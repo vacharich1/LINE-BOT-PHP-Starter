@@ -1551,7 +1551,7 @@ if (!is_null($events['events'])) {
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
 								//sleep(5.5);
-								$llll ='ปิดระบบชั่วคราวครับ';
+								$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $hoonname];
 					
 								$messages1 = ['type' => 'text','text' => $llll];
