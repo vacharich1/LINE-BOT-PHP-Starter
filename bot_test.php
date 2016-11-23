@@ -134,20 +134,20 @@ if (!is_null($events['events'])) {
 								VALUES ('', '$hoonname', '$timeframe',$room)";
 								
 								if (mysqli_query($link, $sql)) {
-								//	echo "New record created successfully";
+										echo "New record created successfully";
 								} 
 								else {
-										#echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 								sleep(0.3);
 								$check ="check1";
 								#echo "work code";
 								$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
 								if (mysqli_query($link, $sql)) {
-								//		echo "New record created successfully";
+										echo "New record created successfully";
 								} 
 								else {
-								//		echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										echo "Error: " . $sql . "<br>" . mysqli_error($link);
 								}
 									#echo "work code";
 								// Get replyToken
