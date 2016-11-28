@@ -124,12 +124,30 @@ if (!is_null($events['events'])) {
 								#echo $hoonname;
 								$room='1';
 								if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
-									$room='2';
+								{
+									if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386')
+										$room='21';
+									if($event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')
+										$room='22';
+								}
 								else if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec')//graph 1
-									$room='1';
+								{
+									if($event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601')
+										$room='11';
+									if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb')
+										$room='12';
+									if($event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5')
+										$room='14';
+									if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec')
+										$room='15';
+								}
 								else
-									$room='3';
-								
+								{
+									if($event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90')
+										$room='31';
+									if($event['source']['groupId'] == 'C1970832b0d5e677dc1498442f8412be7')
+										$room='32';
+								}
 								$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 								VALUES ('', '$hoonname', '$timeframe',$room)";
 								
