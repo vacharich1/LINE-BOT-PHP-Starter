@@ -1568,7 +1568,7 @@ if (!is_null($events['events'])) {
 								$messages4 = ['type' => 'text','text' => $event['source']['type']];
 								
 								$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-								#sleep(5.5);
+								sleep(5.5);
 								//$llll ='SORRY, OUT OF SERVICE';
 								$messages3 = ['type' => 'text','text' => $hoonname];
 					
@@ -1580,22 +1580,22 @@ if (!is_null($events['events'])) {
 								];
 								
 								// Make a POST Request to Messaging API to reply to sender
-								#$url = 'https://api.line.me/v2/bot/message/reply';
-								#$data = [
-								#	'replyToken' => $replyToken,
-								#	'messages' => [$messages3,$messages1]
-								#];
-								#$post = json_encode($data);
-								#$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+								$url = 'https://api.line.me/v2/bot/message/reply';
+								$data = [
+									'replyToken' => $replyToken,
+									'messages' => [$messages3,$messages1]
+								];
+								$post = json_encode($data);
+								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 					
-								#$ch = curl_init($url);
-								#curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-								#curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-								#curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-								#curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-								#curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-								#$result = curl_exec($ch);
-								#curl_close($ch);
+								$ch = curl_init($url);
+								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+								$result = curl_exec($ch);
+								curl_close($ch);
 								
 								
 								
