@@ -1661,7 +1661,6 @@ if (!is_null($events['events'])) {
 		}//if($event['source']['groupId'] 
 		else
 		{
-				
 				foreach ($events['events'] as $event) {
 					$text = $event['message']['text'];
 			
