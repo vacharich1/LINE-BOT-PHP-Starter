@@ -1611,61 +1611,528 @@ if (!is_null($events['events'])) {
 							
 							if($text == 'ss500')
 							{
-									$replyToken = $event['replyToken'];
-									#$messages55 = ['type' => 'text','text' => $event['source']['userId']];
-									
 									$messages55 = ['type' => 'image',
 												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/aaaa.jpg',
 												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/aaaa.jpg'
 											];
-									// Make a POST Request to Messaging API to reply to sender
-									$url = 'https://api.line.me/v2/bot/message/reply';
-									$data = [
-												'replyToken' => $replyToken,
-												'messages' => [$messages55]
+							}
+							else if($text == 'btgold50')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/2.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/2.jpg'
 											];
-									$post = json_encode($data);
-									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-											
-									$ch = curl_init($url);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-									$result = curl_exec($ch);
-									curl_close($ch);
+							}
+							else if($text == 'bts50')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/1.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/1.jpg'
+											];
+							}
+							else if($text == 'btgold10')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/3.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/3.jpg'
+											];
+							}
+							else if($text == 'btaav')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/4.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/4.jpg'
+											];
+							}
+							else if($text == 'btadvanc')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/5.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/5.jpg'
+											];
+							}
+							else if($text == 'btamata')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/6.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/6.jpg'
+											];
+							}
+							else if($text == 'btaot')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/7.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/7.jpg'
+											];
+							}
+							else if($text == 'btap')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/8.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/8.jpg'
+											];
+							}
+							else if($text == 'btba')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/9.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/9.jpg'
+											];
+							}
+							else if($text == 'btbanpu')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/10.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/10.jpg'
+											];
+							}
+							else if($text == 'btbay')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/11.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/11.jpg'
+											];
+							}
+							else if($text == 'btbbl')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/12.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/12.jpg'
+											];
+							}
+							else if($text == 'btbch')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/13.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/13.jpg'
+											];
+							}
+							else if($text == 'btbcp')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/14.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/14.jpg'
+											];
+							}
+							else if($text == 'btbdms')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/15.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/15.jpg'
+											];
+							}
+							else if($text == 'btbem')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/16.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/16.jpg'
+											];
+							}
+							else if($text == 'btbh')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/17.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/17.jpg'
+											];
+							}
+							else if($text == 'btbjc')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/18.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/18.jpg'
+											];
+							}
+							else if($text == 'btbla')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/19.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/19.jpg'
+											];
+							}
+							else if($text == 'btbland')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/20.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/20.jpg'
+											];
+							}
+							else if($text == 'btbts')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/21.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/21.jpg'
+											];
+							}
+							else if($text == 'btcbg')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/22.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/22.jpg'
+											];
+							}
+							else if($text == 'btcentel')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/23.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/23.jpg'
+											];
+							}
+							else if($text == 'btck')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/24.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/24.jpg'
+											];
+							}
+							else if($text == 'btckp')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/25.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/25.jpg'
+											];
+							}
+							else if($text == 'btcpall')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/26.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/26.jpg'
+											];
+							}
+							else if($text == 'btcpf')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/27.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/27.jpg'
+											];
+							}
+							else if($text == 'btcpn')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/28.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/28.jpg'
+											];
+							}
+							else if($text == 'btdtac')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/29.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/29.jpg'
+											];
+							}
+							else if($text == 'btearth')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/30.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/30.jpg'
+											];
+							}
+							else if($text == 'bthana')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/31.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/31.jpg'
+											];
+							}
+							else if($text == 'bthmpro')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/32.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/32.jpg'
+											];
+							}
+							else if($text == 'btichi')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/33.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/33.jpg'
+											];
+							}
+							else if($text == 'btintuch')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/34.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/34.jpg'
+											];
+							}
+							else if($text == 'btirpc')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/35.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/35.jpg'
+											];
+							}
+							else if($text == 'btitd')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/36.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/36.jpg'
+											];
+							}
+							else if($text == 'btivl')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/37.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/37.jpg'
+											];
+							}
+							else if($text == 'btjas')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/38.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/38.jpg'
+											];
+							}
+							else if($text == 'btkbank')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/39.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/39.jpg'
+											];
+							}
+							else if($text == 'btkkp')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/40.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/40.jpg'
+											];
+							}
+							else if($text == 'btktb')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/41.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/41.jpg'
+											];
+							}
+							else if($text == 'btlh')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/42.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/42.jpg'
+											];
+							}
+							else if($text == 'btlpn')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/43.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/43.jpg'
+											];
+							}
+							else if($text == 'btmajor')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/44.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/44.jpg'
+											];
+							}
+							else if($text == 'btmint')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/45.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/45.jpg'
+											];
+							}
+							else if($text == 'btpsh')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/46.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/46.jpg'
+											];
+							}
+							else if($text == 'btptt')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/47.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/47.jpg'
+											];
+							}
+							else if($text == 'btpttep')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/48.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/48.jpg'
+											];
+							}
+							else if($text == 'btpttgc')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/49.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/49.jpg'
+											];
+							}
+							else if($text == 'btqh')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/50.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/50.jpg'
+											];
+							}
+							else if($text == 'btratch')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/51.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/51.jpg'
+											];
+							}
+							else if($text == 'btrobins')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/52.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/52.jpg'
+											];
+							}
+							else if($text == 'btsamart')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/53.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/53.jpg'
+											];
+							}
+							else if($text == 'btsawad')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/54.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/54.jpg'
+											];
+							}
+							else if($text == 'btscb')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/55.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/55.jpg'
+											];
+							}
+							else if($text == 'btscc')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/56.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/56.jpg'
+											];
+							}
+							else if($text == 'btsiri')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/57.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/57.jpg'
+											];
+							}
+							else if($text == 'btspali')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/58.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/58.jpg'
+											];
+							}
+							else if($text == 'btsta')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/59.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/59.jpg'
+											];
+							}
+							else if($text == 'btstec')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/60.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/60.jpg'
+											];
+							}
+							else if($text == 'bttcap')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/61.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/61.jpg'
+											];
+							}
+							else if($text == 'btthai')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/62.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/62.jpg'
+											];
+							}
+							else if($text == 'btthcom')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/63.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/63.jpg'
+											];
+							}
+							else if($text == 'bttmb')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/64.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/64.jpg'
+											];
+							}
+							else if($text == 'bttop')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/65.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/65.jpg'
+											];
+							}
+							else if($text == 'bttpipl')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/66.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/66.jpg'
+											];
+							}
+							else if($text == 'bttta')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/67.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/67.jpg'
+											];
+							}
+							else if($text == 'btttcl')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/68.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/68.jpg'
+											];
+							}
+							else if($text == 'bttu')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/69.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/69.jpg'
+											];
+							}
+							else if($text == 'bttvo')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/70.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/70.jpg'
+											];
+							}
+							else if($text == 'btvgi')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/71.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/71.jpg'
+											];
+							}
+							else if($text == 'bttrue')
+							{
+									$messages55 = ['type' => 'image',
+												 'originalContentUrl' => 'https://linebotjay.herokuapp.com/72.jpg',
+												 'previewImageUrl' => 'https://linebotjay.herokuapp.com/72.jpg'
+											];
 							}
 							else if(preg_match("/^[a-zA-Z]+$/", $text[0]) == 1) {
-								$replyToken = $event['replyToken'];
 								$messages55 = ['type' => 'text','text' => "ลืม @ นะจ๊ะ ----> @hoonname timeframe = @aot 60"];
-								// Make a POST Request to Messaging API to reply to sender
-								$url = 'https://api.line.me/v2/bot/message/reply';
-								$data = [
-									'replyToken' => $replyToken,
-									'messages' => [$messages55]
-								];
-								$post = json_encode($data);
-								$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-					
-								$ch = curl_init($url);
-								curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-								curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-								curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-								curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-								curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-								$result = curl_exec($ch);
-								curl_close($ch);
 							}
 							else
 							{
 								if($text == 'เป็นกราฟเปล่าครับ' || $text == 'เปนกราฟเปล่าคับ' || $text == 'เปนกราฟเปล่าๆคับ' || $text == 'เป็นกราฟเปล่าๆครับ' || $text == 'เป็นกราฟเปล่าคับ' || $text == 'เป็นกราฟเปล่าๆคับ' || $text == 'กราฟเปล่าๆคับ' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่า' || $text == 'กราฟเปล่าคับ' || $text == 'กราฟไม่ขึ้น')
 								{
-									$replyToken = $event['replyToken'];
 									$messages55 = ['type' => 'text','text' => "รบกวนส่งใหม่ครับ กราฟไม่สมบูรณ์"];
-									
-									
-									// Make a POST Request to Messaging API to reply to sender
+								}	
+								
+							}
+									$replyToken = $event['replyToken'];
+							// Make a POST Request to Messaging API to reply to sender
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 												'replyToken' => $replyToken,
@@ -1682,9 +2149,6 @@ if (!is_null($events['events'])) {
 									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 									$result = curl_exec($ch);
 									curl_close($ch);
-								}	
-								
-							}
 							
 						}
 				
