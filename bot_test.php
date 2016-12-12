@@ -2125,7 +2125,10 @@ if (!is_null($events['events'])) {
 											];
 							}
 							else if(preg_match("/^[a-zA-Z]+$/", $text[0]) == 1) {
-								$messages55 = ['type' => 'text','text' => "ลืม @ นะจ๊ะ ----> @hoonname timeframe = @aot 60"];
+								if($event['source']['groupId'] != 'C9fe78b803761432902f6d506b806b354')
+								{
+									$messages55 = ['type' => 'text','text' => "ลืม @ นะจ๊ะ ----> @hoonname timeframe = @aot 60"];
+								}
 							}
 							else
 							{
