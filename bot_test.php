@@ -1572,7 +1572,7 @@ if (!is_null($events['events'])) {
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
 									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									sleep(10);
+									sleep(20);
 									//$llll ='SORRY, OUT OF SERVICE';
 									$messages3 = ['type' => 'text','text' => $hoonname];
 						
