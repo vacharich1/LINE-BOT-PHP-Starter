@@ -1572,7 +1572,7 @@ if (!is_null($events['events'])) {
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
 									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									sleep(15);
+									sleep(8);
 									//$llll ='SORRY, OUT OF SERVICE';
 									$messages3 = ['type' => 'text','text' => $hoonname];
 									
@@ -1587,7 +1587,7 @@ if (!is_null($events['events'])) {
 									$url = 'https://api.line.me/v2/bot/message/reply';
 									$data = [
 										'replyToken' => $replyToken,
-										'messages' => [$messages3,$messages1,$messages2]
+										'messages' => [$messages3,$messages1]
 									];
 									$post = json_encode($data);
 									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
