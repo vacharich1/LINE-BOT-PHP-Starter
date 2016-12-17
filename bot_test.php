@@ -1,4 +1,7 @@
 ﻿<?php
+
+$hoonname="aot";
+$timeframe="60";
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
 	$db = "sql6144521";
