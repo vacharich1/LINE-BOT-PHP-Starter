@@ -157,7 +157,7 @@ if (!is_null($events['events'])) {
 								}
 								if($event['source']['groupId'] != 'C9fe78b803761432902f6d506b806b354')
 								{
-									$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe."".$room.".jpg";
+									
 									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe',$room)";
 									
@@ -177,6 +177,8 @@ if (!is_null($events['events'])) {
 									else {
 											echo "Error: " . $sql . "<br>" . mysqli_error($link);
 									}
+									
+									$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe."".$room.".jpg";
 										#echo "work code";
 									// Get replyToken
 									$replyToken = $event['replyToken'];
@@ -1579,7 +1581,7 @@ if (!is_null($events['events'])) {
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
 									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									sleep(6);
+									sleep(7);
 									//$llll ='SORRY, OUT OF SERVICE';
 									$messages3 = ['type' => 'text','text' => $hoonname];
 									
