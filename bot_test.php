@@ -122,6 +122,7 @@ if (!is_null($events['events'])) {
 								else
 									$timeframe ="d";
 								#echo $hoonname;
+								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
 								$room='1';
 								if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 								{
