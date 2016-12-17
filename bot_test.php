@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
 						if($arr1[0] == "@")
 						{
 							$hoonname = substr($textcut[0], 1); // cut@
-							if(preg_match("/^[a-zA-Z]+$/", $hoonname[0]) != 1) 
+							if(preg_match("/^[a-zA-Z0-9]+$/", $hoonname[0]) != 1) 
 							{
 								$replyToken = $event['replyToken'];
 								$messages556 = ['type' => 'text','text' => "รบกวนพิมอีกครั้งจ๊ะ ต้องไม่มีช่องว่าง ในชื่อหุ้น  @ aot ----> @aot type with no space"];
