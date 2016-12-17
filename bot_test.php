@@ -2,6 +2,7 @@
 
 $hoonname="aot";
 $timeframe="60";
+$room="1";
 echo "aaaaa";
     $host= "sql6.freemysqlhosting.net";
 	$db = "sql6144521";
@@ -125,7 +126,7 @@ if (!is_null($events['events'])) {
 								else
 									$timeframe ="d";
 								#echo $hoonname;
-								$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe.".jpg";
+								
 								$room='1';
 								if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 								{
@@ -156,6 +157,7 @@ if (!is_null($events['events'])) {
 								}
 								if($event['source']['groupId'] != 'C9fe78b803761432902f6d506b806b354')
 								{
+									$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe."".$room.".jpg";
 									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
 									VALUES ('', '$hoonname', '$timeframe',$room)";
 									
