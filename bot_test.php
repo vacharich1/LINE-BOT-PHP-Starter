@@ -1569,7 +1569,7 @@ if (!is_null($events['events'])) {
 										$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
 									// Build message to reply back
 									
-									$linkpic = "https://www.botbottest.club/"+$hoonname1+$timeframe+".jpg"
+									$linkpic = "https://www.botbottest.club/".$hoonname1."".$timeframe.".jpg"
 									#$messages = ['type' => 'text','text' => $event['source']['roomid']];
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
