@@ -1577,15 +1577,15 @@ if (!is_null($events['events'])) {
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
 									$messages5 = ['type' => 'text','text' => $event['source']['groupId']];
-									sleep(5);
+									sleep(6);
 									//$llll ='SORRY, OUT OF SERVICE';
-									$messages3 = ['type' => 'text','text' => $link_pic];
+									$messages3 = ['type' => 'text','text' => $hoonname];
 									
 									$messages1 = ['type' => 'text','text' => $llll];
 									
 									$messages2 = ['type' => 'image',
-											 'originalContentUrl' => 'https://www.botbottest.club/aaa.jpg',
-											 'previewImageUrl' => 'https://www.botbottest.club/aaa.jpg'
+											 'originalContentUrl' => $link_pic,
+											 'previewImageUrl' => $link_pic
 									];
 									
 									// Make a POST Request to Messaging API to reply to sender
