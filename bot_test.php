@@ -1569,7 +1569,6 @@ if (!is_null($events['events'])) {
 										$llll = "https://www.dropbox.com/s/j09fwo3536hdkib/pic.png?dl=0";
 									// Build message to reply back
 									
-									$linkpic = "https://www.botbottest.club/".$hoonname1."".$timeframe.".jpg"
 									#$messages = ['type' => 'text','text' => $event['source']['roomid']];
 									$messages4 = ['type' => 'text','text' => $event['source']['type']];
 									
@@ -1581,8 +1580,8 @@ if (!is_null($events['events'])) {
 									$messages1 = ['type' => 'text','text' => $llll];
 									
 									$messages2 = ['type' => 'image',
-											 'originalContentUrl' => $linkpic,
-											 'previewImageUrl' => $linkpic
+											 'originalContentUrl' => 'https://www.botbottest.club/aaa.jpg',
+											 'previewImageUrl' => 'https://www.botbottest.club/aaa.jpg'
 									];
 									
 									// Make a POST Request to Messaging API to reply to sender
