@@ -78,7 +78,7 @@ if (!is_null($events['events'])) {
 	//9:member2 C328035648eddea983ff6b6a3fc7622ec
 	
 	foreach ($events['events'] as $event) {
-		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'C209fd17b6508ec4786c16e775638e4ae' || $event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90' || $event['source']['groupId'] == 'C1970832b0d5e677dc1498442f8412be7' || $event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['groupId'] == 'C9fe78b803761432902f6d506b806b354')
+		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'C209fd17b6508ec4786c16e775638e4ae' || $event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90' || $event['source']['groupId'] == 'C1970832b0d5e677dc1498442f8412be7' || $event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['groupId'] == 'C9fe78b803761432902f6d506b806b354' || $event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
 		{
 			// Reply only when message sent is in 'text' format
 			if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
@@ -147,6 +147,10 @@ if (!is_null($events['events'])) {
 										$room='15';
 									if($event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
 										$room='16';
+								}
+								else if($event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
+								{
+									$room='41';
 								}
 								else
 								{
