@@ -1589,7 +1589,11 @@ if (!is_null($events['events'])) {
 									//$llll ='SORRY, OUT OF SERVICE';
 									$messages3 = ['type' => 'text','text' => $hoonname];
 									
-									$messages1 = ['type' => 'text','text' => $llll];
+									$messages1 = ['type' => 'text','text' => 'ประกาศ!!!!
+
+เนื่องด้วย ฐานข้อมูลที่ใช้รันบอทนั้นได้เดือบเต็มแล้ว จึงต้องปรับเปลี่ยนเป็นการซื้อพื้นที่บนฐานข้อมูล จึงทำให้เกิดค่าใช้จ่าย เดียจึงขอ ปีละ 300 บาทต่อคน เพื่อเป็นฐานข้อมูลในการส่งกราฟ บอทครับ และจะทำการเปลี่ยนห้อง ไปอีกห้องเพื่อเรียกกราฟรูปแบบที่เรียกได้อยู่ทุกวันนี้ครับ
+
+ติดต่อไลน์ dea-prop เพื่อส่งหลักฐานการโอนรายปี 300 บาทครับ'];
 									
 									$messages2 = ['type' => 'image',
 											 'originalContentUrl' => $link_pic,
@@ -1602,17 +1606,17 @@ if (!is_null($events['events'])) {
 										'replyToken' => $replyToken,
 										'messages' => [$messages1]
 									];
-									//$post = json_encode($data);
-									//$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+									$post = json_encode($data);
+									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 						
-									//$ch = curl_init($url);
-									//curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-									//curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									//curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-									//curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-									//curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-									//$result = curl_exec($ch);
-									//curl_close($ch);
+									$ch = curl_init($url);
+									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+									$result = curl_exec($ch);
+									curl_close($ch);
 								}
 								
 								
