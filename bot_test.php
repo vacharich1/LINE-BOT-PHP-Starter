@@ -1599,24 +1599,36 @@ if (!is_null($events['events'])) {
 											 'originalContentUrl' => $link_pic,
 											 'previewImageUrl' => $link_pic
 									];
+									//1: printer Cd3afd7bd7719ceb0822ea162b50000fb
+									//2:jay black graph C26d889d89b336a786c06358c1e2df27c
+									//3:member_line_bot C7ab92191511e47ff839c174e7f2104c5
+									//4:bot 3g 3r C941fb2b8a40f9d0f400969fa848c3386
+									//5:jay 1 graph C9f2b93574be7434e6e7180a7d7503601
+									//6: jay free graph C209fd17b6508ec4786c16e775638e4ae
+									//7: ideatrade bot 1 Cb880ba168d17c69174b652045a8f8b90
+									//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
+									//9:member2 C328035648eddea983ff6b6a3fc7622ec
 									
 									//// Make a POST Request to Messaging API to reply to sender
-									$url = 'https://api.line.me/v2/bot/message/reply';
-									$data = [
-										'replyToken' => $replyToken,
-										'messages' => [$messages1]
-									];
-									$post = json_encode($data);
-									$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
-						
-									$ch = curl_init($url);
-									curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-									curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-									curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-									curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-									curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-									$result = curl_exec($ch);
-									curl_close($ch);
+									if($event['source']['groupId'] != 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' )
+									{
+										$url = 'https://api.line.me/v2/bot/message/reply';
+										$data = [
+											'replyToken' => $replyToken,
+											'messages' => [$messages1]
+										];
+										$post = json_encode($data);
+										$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+							
+										$ch = curl_init($url);
+										curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+										curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+										curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+										curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+										$result = curl_exec($ch);
+										curl_close($ch);
+									}
 								}
 								
 								
