@@ -1619,7 +1619,7 @@ if (!is_null($events['events'])) {
 									//9:member2 C328035648eddea983ff6b6a3fc7622ec
 									
 									//// Make a POST Request to Messaging API to reply to sender
-									if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' )
+									if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C2debaa5f387f1d99d495ee1f62f25d27' || $event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
 									{
 										$aaa="aaa";
 									}
