@@ -151,11 +151,11 @@ if (!is_null($events['events'])) {
 								}
 								else if($event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
 								{
-									$room='51';
+									$room='41';
 								}
 								else if($event['source']['groupId'] == 'C2debaa5f387f1d99d495ee1f62f25d27')#member 300
 								{
-									$room='41';
+									$room='51';
 								}
 								else
 								{
