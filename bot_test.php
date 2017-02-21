@@ -126,7 +126,8 @@ if (!is_null($events['events'])) {
 								else
 									$timeframe ="d";
 								#echo $hoonname;
-								
+								//Cb880ba168d17c69174b652045a8f8b90
+								//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
 								$room='1';
 								if($event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c')//graph black
 								{
@@ -161,25 +162,29 @@ if (!is_null($events['events'])) {
 								}
 								if($event['source']['groupId'] != 'C9fe78b803761432902f6d506b806b354')
 								{
-									
-									$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
-									VALUES ('', '$hoonname', '$timeframe',$room)";
-									
-									if (mysqli_query($link, $sql)) {
-											echo "New record created successfully";
-									} 
-									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link);
-									}
-									sleep(0.3);
-									$check ="check1";
-									#echo "work code";
-									$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
-									if (mysqli_query($link, $sql)) {
-											echo "New record created successfully";
-									} 
-									else {
-											echo "Error: " . $sql . "<br>" . mysqli_error($link);
+									//Cb880ba168d17c69174b652045a8f8b90
+								//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
+									if($event['source']['groupId'] != 'Cb880ba168d17c69174b652045a8f8b90' and $event['source']['groupId'] != 'C1970832b0d5e677dc1498442f8412be7' )
+									{
+										$sql = "INSERT INTO hoon_check (id, hoonname, timeframe,room)
+										VALUES ('', '$hoonname', '$timeframe',$room)";
+										
+										if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+										} 
+										else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
+										sleep(0.3);
+										$check ="check1";
+										#echo "work code";
+										$sql = "INSERT INTO `check_capture`(`id`, `check1`) VALUES ('','$check')";
+										if (mysqli_query($link, $sql)) {
+												echo "New record created successfully";
+										} 
+										else {
+												echo "Error: " . $sql . "<br>" . mysqli_error($link);
+										}
 									}
 									
 									$link_pic ='https://www.botbottest.club/'.$hoonname."".$timeframe."".$room.".jpg";
