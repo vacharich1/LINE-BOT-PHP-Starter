@@ -2231,11 +2231,37 @@ if (!is_null($events['events'])) {
 							$result = curl_exec($ch);
 							curl_close($ch);
 					}
+					if($event['source']['groupId'] == 'C4338930a2a0e2f36c09c9bf91e6a3d30')
+					{
+						$arr = array('Cd3afd7bd7719ceb0822ea162b50000fb', 'C26d889d89b336a786c06358c1e2df27c', 'C7ab92191511e47ff839c174e7f2104c5', 'C941fb2b8a40f9d0f400969fa848c3386'
+									,'C9f2b93574be7434e6e7180a7d7503601','C209fd17b6508ec4786c16e775638e4ae','Cb880ba168d17c69174b652045a8f8b90','C1970832b0d5e677dc1498442f8412be7',
+									'C328035648eddea983ff6b6a3fc7622ec','Uf120d9606f0eaa9bd32e18f8c85ea58f','Ub5f45b12f0f8f8a3a08e5b52ebbcc96b','C9fe78b803761432902f6d506b806b354'
+									,'C50bdba4e60f90ced6002458b6fb1aa5b','C2debaa5f387f1d99d495ee1f62f25d27');
+						foreach ($arr as $USERID) {
+							$format_text = [
+								"type" => "text",
+								"text" => $text
+							];
+							$post_data = [
+									'to' => $USERID,
+									'messages' => [$format_text]
+							];
+							$header = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+							echo "ssss";
+					 
+							$ch = curl_init('https://api.line.me/v2/bot/message/push');
+							curl_setopt($ch, CURLOPT_POST, true);
+							curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+							curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+							curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data));
+							curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+					 
+							$result = curl_exec($ch);
+							curl_close($ch);
+						}
+						
+					}
 					
-					
-					
-					
-				}
 				
 		}
 	}//for
