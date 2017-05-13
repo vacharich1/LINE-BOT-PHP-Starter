@@ -76,6 +76,7 @@ if (!is_null($events['events'])) {
 	//7: ideatrade bot 1 Cb880ba168d17c69174b652045a8f8b90
 	//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
 	//9:member2 C328035648eddea983ff6b6a3fc7622ec
+	//10:group ideatrade : C9fe78b803761432902f6d506b806b354
 	
 	foreach ($events['events'] as $event) {
 		if($event['source']['groupId'] == 'Cd3afd7bd7719ceb0822ea162b50000fb' || $event['source']['groupId'] == 'C26d889d89b336a786c06358c1e2df27c' || $event['source']['groupId'] == 'C7ab92191511e47ff839c174e7f2104c5' || $event['source']['groupId'] == 'C941fb2b8a40f9d0f400969fa848c3386' || $event['source']['groupId'] == 'C9f2b93574be7434e6e7180a7d7503601' || $event['source']['groupId'] == 'C209fd17b6508ec4786c16e775638e4ae' || $event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90' || $event['source']['groupId'] == 'C1970832b0d5e677dc1498442f8412be7' || $event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec' || $event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b' ||$event['source']['groupId'] == 'C9fe78b803761432902f6d506b806b354' || $event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b' || $event['source']['groupId'] == 'C2debaa5f387f1d99d495ee1f62f25d27')
@@ -180,6 +181,10 @@ if (!is_null($events['events'])) {
 								{
 									$room='51';
 								}
+								else if($event['source']['groupId'] == 'C9fe78b803761432902f6d506b806b354')#group ideatrade
+								{
+									$room="66";	
+								}
 								else
 								{
 									if($event['source']['groupId'] == 'Cb880ba168d17c69174b652045a8f8b90')
@@ -187,7 +192,7 @@ if (!is_null($events['events'])) {
 									if($event['source']['groupId'] == 'C1970832b0d5e677dc1498442f8412be7')
 										$room='32';
 								}
-								if($event['source']['groupId'] != 'C9fe78b803761432902f6d506b806b354')
+								if($event['source']['groupId'] != 'C9fe78b803761432902f6d506b806bxxx')
 								{
 									//Cb880ba168d17c69174b652045a8f8b90
 								//8: ideatrade bot 2 C1970832b0d5e677dc1498442f8412be7
