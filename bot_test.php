@@ -171,7 +171,7 @@ if (!is_null($events['events'])) {
 									if($event['source']['groupId'] == 'C328035648eddea983ff6b6a3fc7622ec')
 										$room='15';
 									if($event['source']['userId'] == 'Uf120d9606f0eaa9bd32e18f8c85ea58f' || $event['source']['userId'] == 'Ub5f45b12f0f8f8a3a08e5b52ebbcc96b')
-										$room='16';
+										$room='15';
 								}
 								else if($event['source']['groupId'] == 'C50bdba4e60f90ced6002458b6fb1aa5b')
 								{
